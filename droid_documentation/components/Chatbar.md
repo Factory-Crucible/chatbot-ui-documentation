@@ -1,30 +1,36 @@
 
 ## components/Chatbar
 
-The `components/Chatbar` directory is a crucial part of a chatbot UI project. It houses the primary TypeScript files that define the behavior and state of the Chatbar component, which is a key part of the user interface. The Chatbar component is responsible for managing conversations, handling API keys, and managing plugin keys. The directory also contains a subdirectory, `components/Chatbar/components`, which includes additional TypeScript files that export various React components used in the chatbot UI. These components handle settings, conversations, chat folders, and plugin keys. The structure of this directory and its contents reflect the modular design of the chatbot UI, with each file and subdirectory playing a specific role in the overall functionality of the Chatbar component.
+The `components/Chatbar` directory is a crucial part of the chatbot UI project. It is responsible for the chat bar's functionality, which is a key user interface element in the chatbot application. The chat bar allows users to manage conversations, change API keys, and handle plugin keys. It also provides options for exporting and importing data, and clearing conversations. The directory contains three TypeScript files and a subdirectory, each contributing to the chat bar's functionality.
 
 ### Contents
 
-The `components/Chatbar` directory contains three TypeScript files:
+The `components/Chatbar` directory contains the following files and subdirectory:
 
-1. `Chatbar.state.tsx` - This file sets the initial state for the Chatbar component, including a search term and a list of filtered conversations.
-2. `Chatbar.tsx` - This is a React component representing the chat bar, with handlers for various actions like changing API keys and managing conversations.
-3. `Chatbar.context.tsx` - This file defines the context for the Chatbar component, including the state, dispatch function, and several handler functions.
+- `Chatbar.state.tsx`: This TypeScript file defines the initial state for the Chatbar component, including a search term and a list of filtered conversations.
 
-The directory also contains a subdirectory:
+- `Chatbar.tsx`: This is a React component representing the chat bar, with handlers for various actions like changing API keys and managing conversations.
 
-1. `components/Chatbar/components` - This subdirectory contains six TypeScript files, each exporting a React component used in the chatbot UI. These components handle settings, conversations, chat folders, and plugin keys.
+- `Chatbar.context.tsx`: This TypeScript file defines the context for the Chatbar component, including the state, dispatch function, and several handler functions.
+
+- `components/Chatbar/components`: This subdirectory contains six TypeScript files, each exporting a React component used in the chatbot UI. These components handle settings, conversations, chat folders, and plugin keys.
 
 ### Key Components
 
-The `Chatbar.tsx` file is a critical component of the `components/Chatbar` directory. It defines the Chatbar functional component, which uses several hooks for state and context management. It also defines several handlers for different actions such as changing API keys, handling plugin keys, exporting and importing data, clearing conversations, deleting conversations, and toggling the chat bar. These handlers interact with both local and global state, and also make use of local storage.
+The `Chatbar.state.tsx` file is a key component in this directory. It sets the initial state for the Chatbar component, which is crucial for managing the state of the chat bar, such as the current search term and the list of conversations filtered by that term.
 
-The `Chatbar.context.tsx` file is another key component. It defines the context for the Chatbar component, including the state, dispatch function, and several handler functions for managing conversations, exporting and importing data, and handling changes to plugin keys and API keys. This context is crucial for the functioning of the Chatbar component and its interaction with other components.
+The `Chatbar.tsx` file is another critical component. It represents the chat bar of the chatbot application and defines several handlers for different actions. These handlers interact with both local and global state, and also make use of local storage.
+
+The `Chatbar.context.tsx` file is important as it defines the context for the Chatbar component. This context includes the state, dispatch function, and several handler functions for managing conversations, exporting and importing data, and handling changes to plugin keys and API keys.
+
+The `components/Chatbar/components` subdirectory contains several key components used in the chatbot UI. These components handle settings, conversations, chat folders, and plugin keys.
 
 ### Usage & Examples
 
-The files in the `components/Chatbar` directory are used to define and manage the Chatbar component of the chatbot UI. For instance, the `Chatbar.state.tsx` file is used to set the initial state of the Chatbar component, including a search term and a list of filtered conversations. This state is then used in the `Chatbar.tsx` file to manage the state of the Chatbar component, such as the current search term and the list of conversations filtered by that term.
+The files in the `components/Chatbar` directory are used to manage the chat bar's functionality in the chatbot UI. For instance, the `Chatbar.state.tsx` file is used to set the initial state for the Chatbar component. This state includes a search term and a list of filtered conversations, which are crucial for managing the chat bar's state.
 
-The `Chatbar.context.tsx` file is used to define the context for the Chatbar component. This context includes the state, dispatch function, and several handler functions for managing conversations, exporting and importing data, and handling changes to plugin keys and API keys. This context is then used in other components to access and manipulate the state and handlers of the Chatbar component.
+The `Chatbar.tsx` file is used to define the chat bar's functionality. It includes handlers for various actions like changing API keys, managing conversations, and handling plugin keys. It also provides options for exporting and importing data, and clearing conversations.
 
-The `components/Chatbar/components` subdirectory contains several TypeScript files, each exporting a React component used in the chatbot UI. These components are used to handle settings, conversations, chat folders, and plugin keys. For example, the `ChatbarSettings.tsx` file exports a component that provides the settings interface for the chatbar, including options to clear conversations, import/export data, and change API keys. The `Conversations.tsx` file exports a component that displays a list of individual conversations not part of any folder.
+The `Chatbar.context.tsx` file is used to define the context for the Chatbar component. This context includes the state, dispatch function, and several handler functions. These handler functions are used to manage conversations, export and import data, and handle changes to plugin keys and API keys.
+
+The `components/Chatbar/components` subdirectory contains several components used in the chatbot UI. These components handle settings, conversations, chat folders, and plugin keys. For example, the `ChatbarSettings.tsx` component provides the settings interface for the chat bar, including options to clear conversations, import/export data, and change API keys.
