@@ -1,48 +1,57 @@
 
-## __tests__ Directory
+# `__tests__` Directory
 
-The `__tests__` directory serves as a dedicated space for testing within the project. It is structured to reflect the organization of the application's codebase, with each subdirectory corresponding to a different part of the application. The directory's primary purpose is to ensure the application's functionality and integrity by validating the behavior of its various components. The tests are organized in a way that mirrors the structure of the application, making it easier to locate and understand the tests related to a specific part of the codebase.
+The `__tests__` directory is a dedicated space for testing in the Factory-Crucible/chatbot-ui-documentation project. It is a crucial part of the project's engineering practices, ensuring the reliability and maintainability of the codebase. The directory is structured to reflect the organization of the project's codebase, with a focus on testing the utility functions of the application. The directory contains a subdirectory named `utils`, which serves as a testing suite for the application's utility functions.
 
-### Contents
+## Contents
 
-The `__tests__` directory contains one subdirectory: `utils`. This subdirectory is a testing suite for the application's utility functions. Within the `utils` directory, there is another subdirectory named `app`, which contains a test file named `importExports.test.ts`.
+The `__tests__` directory contains one subdirectory:
 
-- `__tests__/utils`: This subdirectory is a testing suite for the application's utility functions. It contains a subdirectory named `app`.
-- `__tests__/utils/app`: This subdirectory contains test files for the application's utility functions. Specifically, it includes a file named `importExports.test.ts`.
+- `utils`: This subdirectory is a testing suite for the utility functions within the application. It contains another subdirectory named `app`, which houses a test file `importExports.test.ts` that validates the functionality of import and export operations.
 
-### Key Components
+### `__tests__/utils` Directory
 
-The key component within this directory is the `importExports.test.ts` file located in the `__tests__/utils/app` subdirectory. This file is responsible for validating the import and export operations of the application. It ensures that the objects being exported conform to the expected format for each version. Additionally, it tests a function named `cleanData`, which is designed to update data from older export formats to the latest one. The test verifies that the updated data aligns with the expected structure of the current format.
+The `__tests__/utils` directory is a testing suite for utility functions within the application. It is designed to ensure the correct functionality of the utility functions that are critical to the operation of the application. The directory contains a subdirectory named `app`, which houses a test file `importExports.test.ts` that validates the functionality of import and export operations.
 
-### Usage & Examples
+#### `__tests__/utils/app` Directory
 
-The `__tests__` directory is used to house all the tests for the application. Each subdirectory within `__tests__` corresponds to a different part of the application, and the tests within each subdirectory validate the functionality of that part of the application.
+The `__tests__/utils/app` directory contains test files for the application's utility functions. It includes a file named `importExports.test.ts`, which tests utility functions related to import and export operations in the application. The directory is designed to ensure that the utility functions related to data import and export are working as expected.
 
-For example, the `importExports.test.ts` file within the `__tests__/utils/app` subdirectory tests the import and export operations of the application. It contains several test suites, each of which is dedicated to testing a different version of the export format. Each test suite contains tests that check whether a given object matches the expected format for that version. Here's a simplified example of what these tests might look like:
+##### `__tests__/utils/app/importExports.test.ts` File
 
-```typescript
-describe('Export Format Functions', () => {
-  describe('isExportFormatV1', () => {
-    it('should return true for v1 format', () => {
-      // Test code here
-    });
-    it('should return false for non-v1 formats', () => {
-      // Test code here
-    });
-  });
-  // Similar tests for other versions...
-});
-```
+The `importExports.test.ts` file is a test file for utility functions related to import and export operations in the application. It contains tests for different versions of the export format, checking whether a given object matches the expected format for each version. It also tests the `cleanData` function, which converts data from older export formats to the latest format.
 
-The `importExports.test.ts` file also tests the `cleanData` function, which converts data from older export formats to the latest format. The tests ensure that the cleaned data matches the expected structure of the latest format. Here's a simplified example of what these tests might look like:
+## Key Components
+
+The key component in the `__tests__` directory is the `importExports.test.ts` file located in the `__tests__/utils/app` subdirectory. This file tests the utility functions related to import and export operations in the application. It verifies different versions of the export format, ensuring that a given object matches the expected format for each version. The file also tests the `cleanData` function, which converts data from older export formats to the latest one, and checks that the cleaned data aligns with the expected structure of the latest format.
+
+## Usage & Examples
+
+The `__tests__` directory is used to test the utility functions of the application. For example, the `importExports.test.ts` file tests the `cleanData` function, which is used to update data from older export formats to the latest one. The tests in this file ensure that the cleaned data matches the expected structure of the latest format.
+
+The skeleton of the `importExports.test.ts` file is as follows:
 
 ```typescript
-describe('cleanData Functions', () => {
-  describe('cleaning v1 data', () => {
-    it('should return the latest format', () => {
-      // Test code here
-    });
-  });
-  // Similar tests for other versions...
-});
+describe('Export Format Functions', () => {});
+describe('isExportFormatV1', () => {});
+it('should return true for v1 format', () => {});
+it('should return false for non-v1 formats', () => {});
+describe('isExportFormatV2', () => {});
+it('should return true for v2 format', () => {});
+it('should return false for non-v2 formats', () => {});
+describe('isExportFormatV3', () => {});
+it('should return true for v3 format', () => {});
+it('should return false for non-v3 formats', () => {});
+describe('isExportFormatV4', () => {});
+it('should return true for v4 format', () => {});
+it('should return false for non-v4 formats', () => {});
+describe('cleanData Functions', () => {});
+describe('cleaning v1 data', () => {});
+it('should return the latest format', () => {});
+describe('cleaning v2 data', () => {});
+it('should return the latest format', () => {});
+describe('cleaning v4 data', () => {});
+it('should return the latest format', () => {});
 ```
+
+This skeleton provides a clear structure for the tests, with each test case clearly defined and organized according to the version of the export format it is testing.

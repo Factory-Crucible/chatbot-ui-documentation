@@ -1,18 +1,24 @@
 
-## The 'styles' Directory
+# Styles Directory
 
-The 'styles' directory serves as the central hub for the project's global styling. It is home to the 'globals.css' file, which is a critical component in defining the overall look and feel of the project. This file leverages the power of the Tailwind CSS framework, a utility-first CSS framework, to import base, components, and utilities. It also includes custom styles for the webkit scrollbar and sets the HTML document's background color. The 'globals.css' file is designed to be responsive, with a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. It also includes specific styles for 'pre' elements that contain a 'div' with the class 'codeblock', removing their padding. The 'styles' directory does not contain any subdirectories, keeping the global styles centralized and easily accessible.
+The `styles` directory is a crucial part of the chatbot-ui project, serving as the central location for the project's global styling. It contains a single file, `globals.css`, which holds the global styles for the project. This file is responsible for setting the overall look and feel of the application, including the background color, scrollbar styles, and responsive design adjustments. It leverages the Tailwind CSS framework, a utility-first CSS framework, to provide a consistent and scalable approach to styling.
 
-### Contents
+## Contents
 
-The 'styles' directory contains a single file:
+The `styles` directory is straightforward in its structure, containing only one file:
 
-- 'globals.css': This is a Cascading Style Sheet (CSS) file that contains global styles for the project. It includes the import of base, components, and utilities from Tailwind CSS, a utility-first CSS framework. The file also contains custom styles for the webkit scrollbar, including its track, thumb, and corner, with different styles for hover states. It sets the background color of the HTML document to a dark shade. Additionally, it contains a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. Lastly, it removes padding from 'pre' elements that contain a 'div' with the class 'codeblock'.
+- `globals.css`: This is a CSS file that contains the global styles for the project. It sets the overall aesthetic of the application and includes responsive design adjustments.
 
-### Key Components
+## Key Components
 
-The 'globals.css' file is the key component of the 'styles' directory. It is responsible for the global styling of the project. The file's importance lies in its ability to define the overall aesthetic of the project, ensuring consistency across all pages. It leverages the Tailwind CSS framework to import base, components, and utilities, providing a robust set of tools for styling. The file also includes custom styles for the webkit scrollbar and sets the HTML document's background color. It is designed to be responsive, with a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. It also includes specific styles for 'pre' elements that contain a 'div' with the class 'codeblock', removing their padding.
+The `globals.css` file is the key component in this directory. It is responsible for the global styling of the project, making it a critical part of the application's user interface. It includes the import of base, components, and utilities from Tailwind CSS, providing a consistent and scalable approach to styling. The file also contains custom styles for the webkit scrollbar, including its track, thumb, and corner, with different styles for hover states. It sets the background color of the HTML document to a dark shade, aligning with the application's overall aesthetic. Additionally, it contains a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. Lastly, it removes padding from 'pre' elements that contain a 'div' with the class 'codeblock', ensuring a clean and uncluttered presentation of code blocks.
 
-### Usage & Examples
+## Usage & Examples
 
-The 'globals.css' file is used to define the global styles for the project. It is included in the HTML document's head, allowing the styles to be applied across the entire project. The file is structured with the import of base, components, and utilities from the Tailwind CSS framework at the top, followed by custom styles for the webkit scrollbar and the setting of the HTML document's background color. It also includes a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. Lastly, it removes padding from 'pre' elements that contain a 'div' with the class 'codeblock'. This structure ensures that the global styles are applied consistently and efficiently across the project.
+The `globals.css` file is used to set the global styles for the project. It is loaded at the highest level of the application, ensuring that its styles are applied across the entire application. The file is written in CSS, a stylesheet language used for describing the look and formatting of a document written in HTML.
+
+For example, the file sets the background color of the HTML document to a dark shade, which can be seen across all pages of the application. It also includes a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. This ensures that the application's layout is responsive and adapts to different screen sizes.
+
+The file also contains custom styles for the webkit scrollbar. For instance, it sets the track, thumb, and corner of the scrollbar to specific colors and styles, and includes different styles for hover states. This ensures a consistent and visually pleasing scrollbar across the application.
+
+Lastly, the file removes padding from 'pre' elements that contain a 'div' with the class 'codeblock'. This is typically used in the presentation of code blocks, ensuring that they are displayed in a clean and uncluttered manner.
