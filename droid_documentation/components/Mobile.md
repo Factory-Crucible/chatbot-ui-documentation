@@ -1,34 +1,46 @@
 
 # `components/Mobile` Directory
 
-The `components/Mobile` directory plays a pivotal role in the mobile version of the application. It is dedicated to housing components that are specifically designed for the mobile interface. Currently, it contains a single TypeScript file, `Navbar.tsx`, which defines a functional component named `Navbar`. This component is a key part of the mobile application's user interface, serving as the navigation bar in a chat application. The `Navbar` component is designed to accept two props: `selectedConversation` and `onNewConversation`, which together facilitate the display and management of active chats in the application. Despite its simplicity, this directory is crucial in ensuring a smooth and user-friendly mobile experience.
+The `components/Mobile` directory is a specialized section of the codebase dedicated to the mobile version of the chatbot-ui application. It is a part of the larger `components` directory, which houses various parts of the project, each in its own subdirectory. The `components/Mobile` directory specifically contains files related to the mobile interface of the application, focusing on the navigation bar functionality. The directory currently houses one TypeScript file, `Navbar.tsx`, which defines a functional component named 'Navbar'. This component is designed to be used in the navigation bar of the mobile chat application, and it plays a crucial role in managing the active chat and initiating new conversations.
 
 ## Contents
 
-The `components/Mobile` directory is straightforward in its structure, containing only one file and no subdirectories. The file it houses is:
+The `components/Mobile` directory is a single-layered directory with no subdirectories. It contains one TypeScript file:
 
-- `Navbar.tsx`: A TypeScript file that defines the `Navbar` functional component. This component is used in the navigation bar of the mobile chat application. It accepts two props: `selectedConversation`, an object of type `Conversation` representing the currently active chat, and `onNewConversation`, a function that is triggered when a new conversation is initiated.
+- `Navbar.tsx`: This file defines a functional component named 'Navbar' for the mobile application. The component is designed to be used in the navigation bar of a chat application. It accepts two props: 'selectedConversation', which is an object of type 'Conversation', and 'onNewConversation', which is a function that gets triggered when a new conversation is started. The component displays the name of the selected conversation and an 'IconPlus' button that, when clicked, triggers the 'onNewConversation' function.
 
 ## Key Components
 
-The `Navbar.tsx` file is the cornerstone of this directory. It defines the `Navbar` functional component, which is a critical part of the mobile chat application's user interface. The `Navbar` component is designed to display the name of the currently selected conversation and provide an `IconPlus` button for initiating new conversations. 
+The `Navbar.tsx` file is the key component in this directory. It defines the 'Navbar' functional component, which is specifically designed for the mobile application's navigation bar. The 'Navbar' component plays a crucial role in managing the active chat and initiating new conversations in the mobile version of the chatbot-ui application. It accepts two props:
 
-The `Navbar` component accepts two props:
+- `selectedConversation`: An object of type 'Conversation' representing the currently active chat.
+- `onNewConversation`: A function that is triggered when a new conversation is initiated.
 
-- `selectedConversation`: An object of type `Conversation` that represents the currently active chat. This prop allows the `Navbar` to display the name of the active conversation.
-- `onNewConversation`: A function that is triggered when the `IconPlus` button is clicked. This prop enables the initiation of new conversations from the navigation bar.
+The 'Navbar' component displays the name of the selected conversation and an 'IconPlus' button. When this button is clicked, it triggers the 'onNewConversation' function, thus initiating a new conversation.
 
 ## Usage & Examples
 
-The `Navbar` component defined in the `Navbar.tsx` file is used in the mobile version of the chat application. It is typically rendered at the top of the chat interface, displaying the name of the currently active conversation and providing an `IconPlus` button for initiating new conversations.
+The 'Navbar' component is used within the mobile version of the chatbot-ui application. It is a part of the navigation bar and is responsible for displaying the currently active chat and providing the functionality to start a new conversation.
 
-While the exact usage may vary depending on the specific requirements of the application, a typical usage pattern might look something like this:
+Here is a simplified example of how the 'Navbar' component might be used in the application:
 
 ```typescript
-<Navbar 
-  selectedConversation={currentConversation} 
-  onNewConversation={handleNewConversation} 
-/>
+import { Navbar } from './components/Mobile/Navbar';
+
+const App = () => {
+  const [selectedConversation, setSelectedConversation] = useState<Conversation>(null);
+
+  const handleNewConversation = () => {
+    // Logic to start a new conversation
+  };
+
+  return (
+    <Navbar
+      selectedConversation={selectedConversation}
+      onNewConversation={handleNewConversation}
+    />
+  );
+};
 ```
 
-In this example, `currentConversation` would be an object of type `Conversation` representing the currently active chat, and `handleNewConversation` would be a function that handles the initiation of new conversations.
+In this example, the 'Navbar' component is imported from the 'components/Mobile' directory and used in the 'App' component. The 'selectedConversation' state is managed by the 'App' component, and the 'handleNewConversation' function is passed as a prop to the 'Navbar' component. When the 'IconPlus' button in the 'Navbar' component is clicked, it triggers the 'handleNewConversation' function, initiating a new conversation.
