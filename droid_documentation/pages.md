@@ -1,38 +1,38 @@
 
-## Pages Directory
+# `pages` Directory
 
-The `pages` directory is a central component of the project, housing key files and a subdirectory that together form the backbone of the application's functionality. This directory is responsible for defining the main entry points of the application, setting up the custom Document and App components for the Next.js application, and managing the API interactions. The files within this directory work in tandem to create a cohesive user experience, from rendering the home page to handling API requests and responses.
+The `pages` directory is a pivotal part of the `chatbot-ui` project, serving as the home for key files and a subdirectory that are integral to the functioning of the application. This directory is responsible for defining the structure and behavior of the application's pages, including the main entry point for the home page (`index.tsx`), a custom Document for the Next.js application (`_document.tsx`), and a custom App component (`_app.tsx`). Additionally, it houses the `api` subdirectory, which contains files that handle API requests and responses, interacting with OpenAI and Google APIs, and files related to the 'home' page of the application.
 
-### Contents
+## Contents
 
-The `pages` directory contains three TypeScript files and a subdirectory named `api`. 
+The `pages` directory contains three key files and a subdirectory:
 
-- `index.tsx`: This file serves as the main entry point for the application's home page. It exports a React component and a server-side rendering function, both of which are imported from the `home` file in the `api` subdirectory.
+- `index.tsx`: This file serves as the main entry point for the home page of the application, exporting a React component and a server-side rendering function.
 
-- `_document.tsx`: This is a custom Document for the Next.js application. It defines an HTML document structure with metadata and scripts, and supports internationalization.
+- `_document.tsx`: This file is a custom Document for the Next.js application, defining an HTML document structure with metadata and scripts.
 
-- `_app.tsx`: This is a custom App component for initializing pages and setting up libraries for notifications, queries, and internationalization.
+- `_app.tsx`: This file is a custom App component, initializing pages and setting up libraries for notifications and queries. It also supports internationalization.
 
 - `api`: This subdirectory contains files for handling API requests and responses, interacting with OpenAI and Google APIs, and files related to the 'home' page of the application.
 
-### Key Components
+## Key Components
 
-The `pages` directory contains several critical files that play a significant role in the application's functionality.
+The `pages` directory contains several critical files and subdirectories that contribute to the functionality of the `chatbot-ui` project:
 
-- `index.tsx`: This file is the main entry point for the home page, exporting a React component and a server-side rendering function. It plays a crucial role in rendering the home page of the application.
+- `index.tsx`: This file is the main entry point for the home page of the application. It exports a React component and a server-side rendering function, both of which are imported from a sibling file in the 'api' subdirectory named 'home'.
 
-- `_document.tsx`: This custom Document for the Next.js application defines the HTML document structure, including metadata and scripts. It is essential for setting up the HTML structure of the application and including necessary scripts and metadata.
+- `_document.tsx`: This file is a custom Document for the Next.js application. It defines an HTML document structure with metadata and scripts, providing a consistent structure for all pages in the application.
 
-- `_app.tsx`: This custom App component initializes pages and sets up libraries for notifications, queries, and internationalization. It is vital for initializing the application and setting up necessary libraries.
+- `_app.tsx`: This file is a custom App component, initializing pages and setting up libraries for notifications and queries. It also supports internationalization, making the application accessible to a global audience.
 
-### Usage & Examples
+- `api`: This subdirectory is responsible for handling API requests and responses, interacting with OpenAI and Google APIs, and managing the 'home' page of the application.
 
-The files within the `pages` directory are used to define the main structure and functionality of the application.
+## Usage & Examples
 
-- `index.tsx`: This file is used to render the home page of the application. It exports a React component and a server-side rendering function, both of which are imported from the `home` file in the `api` subdirectory.
+The files and subdirectories within the `pages` directory are used to define the structure and behavior of the application's pages. For instance, the `index.tsx` file serves as the main entry point for the home page of the application, exporting a React component and a server-side rendering function. This file is typically used to render the main layout or page structure, and to fetch initial data for the page.
 
-- `_document.tsx`: This file is used to define the HTML document structure of the application. It includes necessary metadata and scripts for the application.
+The `_document.tsx` file is a custom Document for the Next.js application. It defines an HTML document structure with metadata and scripts. This file is typically used to augment the application's `<html>` and `<body>` tags, and to set global CSS.
 
-- `_app.tsx`: This file is used to initialize the application and set up necessary libraries. It imports several libraries, sets up a QueryClient for 'react-query', and a Toaster for toast notifications.
+The `_app.tsx` file is a custom App component, initializing pages and setting up libraries for notifications and queries. It also supports internationalization. This file is typically used to keep state when navigating between pages, for example, to keep track of a user's login state.
 
-The `api` subdirectory contains files that handle API requests and responses, interact with OpenAI and Google APIs, and manage the 'home' page of the application. These files are used to handle various API interactions and manage the functionality of the home page.
+The `api` subdirectory contains files for handling API requests and responses, interacting with OpenAI and Google APIs, and managing the 'home' page of the application. These files are typically used to define API routes and handlers, and to manage server-side logic.
