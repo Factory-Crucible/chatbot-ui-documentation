@@ -1,29 +1,43 @@
 
-## Components/Buttons Directory
+# `components/Buttons` Directory Documentation
 
-The `components/Buttons` directory is a specialized section of the codebase dedicated to the definition and management of button components. This directory is structured to provide a clear and organized approach to managing different types of buttons within the application. It houses a subdirectory named `SidebarActionButton` which contains the definition and exportation of a specific React component, the `SidebarActionButton`. This component is a button with unique styling and properties that are used across the application. The structure of this directory and its contents play a crucial role in maintaining a clean and efficient codebase, allowing for easy navigation and usage of button components.
+The `components/Buttons` directory is a part of the `chatbot-ui` project, which serves as the user interface for a chatbot in the SF AI platform. This directory is specifically dedicated to defining and managing the various button components used across the application. The button components are encapsulated within their own subdirectories, each containing the necessary TypeScript files that define their structure, functionality, and styling. One such subdirectory is `SidebarActionButton`, which houses the `SidebarActionButton.tsx` and `index.ts` files.
 
-### Contents
+## Contents
 
-The `components/Buttons` directory contains one subdirectory:
+The `components/Buttons` directory contains a single subdirectory named `SidebarActionButton`. This subdirectory is dedicated to the `SidebarActionButton` component, a button with specific styling and functionality used in the application's sidebar.
 
-- `SidebarActionButton`: This subdirectory contains the definition and exportation of the `SidebarActionButton` React component. It houses two files, `index.ts` and `SidebarActionButton.tsx`.
+- `SidebarActionButton`: This subdirectory contains two TypeScript files, `SidebarActionButton.tsx` and `index.ts`. The `SidebarActionButton.tsx` file defines the `SidebarActionButton` component, while the `index.ts` file simplifies the import paths by re-exporting the default export from `SidebarActionButton.tsx`.
 
-The `SidebarActionButton` subdirectory contains two files:
+## Key Components
 
-- `index.ts`: A TypeScript module export file that re-exports the default export from `SidebarActionButton.tsx`, simplifying the import paths for other parts of the codebase.
-- `SidebarActionButton.tsx`: A file that defines the `SidebarActionButton` React component. This component is a button with specific styling and two props: `handleClick` and `children`.
+The `SidebarActionButton` subdirectory within the `components/Buttons` directory houses the `SidebarActionButton.tsx` and `index.ts` files, which are critical to the functionality and accessibility of the `SidebarActionButton` component.
 
-### Key Components
+- `SidebarActionButton.tsx`: This file defines the `SidebarActionButton` component, a button with specific styling and two props: `handleClick` and `children`. The `handleClick` prop is a function that manages the button's click event, and the `children` prop renders any child elements within the button. The button's style includes a minimum width of 20px, padding of 1, and different text colors for normal and hover states.
 
-The `SidebarActionButton.tsx` file is a critical component of the `components/Buttons` directory. It defines the `SidebarActionButton` React component, a button with specific styling and two props: `handleClick` and `children`. The `handleClick` prop is a function that handles the button's click event, while the `children` prop is used to render any child elements within the button. The button has a minimum width of 20px, padding of 1, and different text colors for normal and hover states. This component is exported as the default export of the file, allowing it to be easily imported and used across the application.
+- `index.ts`: This file is a module export file that simplifies import paths by re-exporting the default export from `SidebarActionButton.tsx`. This practice enhances the maintainability of the codebase by simplifying the import paths for other parts of the application.
 
-The `index.ts` file, while simple, plays a crucial role in the structure of the codebase. It re-exports the default export from `SidebarActionButton.tsx`, simplifying the import paths for other parts of the codebase. This pattern is common in JavaScript and TypeScript projects and helps maintain a clean and organized codebase.
+## Usage & Examples
 
-### Usage & Examples
+The `SidebarActionButton` component, defined in the `SidebarActionButton.tsx` file, is used throughout the `chatbot-ui` project wherever a button with specific styling and functionality is required in the application's sidebar. The `handleClick` prop allows the component to manage the button's click event, while the `children` prop enables the rendering of any child elements within the button.
 
-The `SidebarActionButton` component defined in the `SidebarActionButton.tsx` file is used across the application wherever a button with its specific styling and properties is needed. The `handleClick` prop can be passed a function to manage the button's click event, and the `children` prop can be used to render any child elements within the button.
+For instance, the `SidebarActionButton` might be used in a sidebar menu component as follows:
 
-For example, the `SidebarActionButton` might be used in a sidebar navigation component. The `handleClick` prop could be passed a function that navigates to a different page when the button is clicked, and the `children` prop could be used to render the button's label.
+```typescript
+import SidebarActionButton from '../components/Buttons/SidebarActionButton';
 
-Please note that the above is a hypothetical example and may not represent the actual usage patterns in the codebase.
+function SidebarMenu() {
+  const handleClick = () => {
+    // Handle click event
+  };
+
+  return (
+    <SidebarActionButton handleClick={handleClick}>
+      <Icon />
+      <p>Menu Item</p>
+    </SidebarActionButton>
+  );
+}
+```
+
+In this example, the `SidebarActionButton` component is imported from the `components/Buttons/SidebarActionButton` directory. The `handleClick` function is passed as a prop to handle the button's click event, and the `children` prop is used to render an icon and a paragraph element within the button.
