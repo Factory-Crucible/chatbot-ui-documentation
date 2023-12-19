@@ -80,4 +80,4 @@ The Chatbot UI project interacts with external systems, specifically the OpenAI 
 
 The project follows a testing approach that focuses on unit testing. The '__tests__' directory contains test files and a 'utils' subdirectory as a testing suite. The 'importExports.test.ts' file validates the import and export operations of the application. It ensures that the objects being exported conform to the expected format for each version. It also tests a function named 'cleanData', which is designed to update data from older export formats to the latest one. The test verifies that the updated data aligns with the expected structure of the current format.
 
-For more information on testing, refer to the ![Testing Documentation](./__tests__.md).
+For more information on testing, refer to the [Testing Documentation](./__tests__.md "I wonder how this is rendered").
