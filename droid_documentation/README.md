@@ -70,7 +70,7 @@ For a more in-depth understanding of the flows, refer to the following documenta
 
 - [Chat Component](#Technologies-used): Handles the chat functionality, including generating responses and managing chat messages.
 - [Chatbar Component](#overview): Manages the chat bar, including initiating new conversations and managing prompts and folders.
-- [API Pages](./pages.md): Handles API requests and responses, interacting with the OpenAI and Google APIs.
+- [API Pages](): Handles API requests and responses, interacting with the OpenAI and Google APIs.
 
 ### System Connections
 
