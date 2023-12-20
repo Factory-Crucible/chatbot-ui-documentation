@@ -5,7 +5,7 @@ Welcome to the documentation for the Chatbot UI project. This document serves as
 
 ## Overview
 
-### Purpose
+###Purpose
 
 The Chatbot UI project is designed to create a user-friendly interface for interacting with a chatbot. The chatbot is powered by OpenAI and Google APIs, and the UI provides a platform for users to engage in conversations with the chatbot, manage prompts and folders, and adjust settings. The project is a microservice that interacts with other services, such as the OpenAI and Google APIs, to generate responses and search results.
 
@@ -68,7 +68,7 @@ The main flows in the codebase revolve around the interaction between the user a
 
 For a more in-depth understanding of the flows, refer to the following documentation files:
 
-- [Chat Component](#Technologies Used): Handles the chat functionality, including generating responses and managing chat messages.
+- [Chat Component](#Technologies-used): Handles the chat functionality, including generating responses and managing chat messages.
 - [Chatbar Component](#invalid): Manages the chat bar, including initiating new conversations and managing prompts and folders.
 - [API Pages](./pages.md): Handles API requests and responses, interacting with the OpenAI and Google APIs.
 
