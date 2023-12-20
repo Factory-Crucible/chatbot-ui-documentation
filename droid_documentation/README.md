@@ -68,7 +68,7 @@ The main flows in the codebase revolve around the interaction between the user a
 
 For a more in-depth understanding of the flows, refer to the following documentation files:
 
-- [Chat Component](#Chatbot UI Documentation): Handles the chat functionality, including generating responses and managing chat messages.
+- [Chat Component](#Technologies Used): Handles the chat functionality, including generating responses and managing chat messages.
 - [Chatbar Component](#invalid): Manages the chat bar, including initiating new conversations and managing prompts and folders.
 - [API Pages](./pages.md): Handles API requests and responses, interacting with the OpenAI and Google APIs.
 
