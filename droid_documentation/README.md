@@ -3,7 +3,7 @@
 
 Welcome to the documentation for the Chatbot UI project. This document serves as the entry point for developers, providing a high-level overview of the codebase. The aim is to guide developers to have a better understanding of the context of the code as part of the whole puzzle.
 
-## Overview
+## `Overview`
 
 ###Purpose
 
@@ -69,7 +69,7 @@ The main flows in the codebase revolve around the interaction between the user a
 For a more in-depth understanding of the flows, refer to the following documentation files:
 
 - [Chat Component](#Technologies-used): Handles the chat functionality, including generating responses and managing chat messages.
-- [Chatbar Component](#invalid): Manages the chat bar, including initiating new conversations and managing prompts and folders.
+- [Chatbar Component](#overview): Manages the chat bar, including initiating new conversations and managing prompts and folders.
 - [API Pages](./pages.md): Handles API requests and responses, interacting with the OpenAI and Google APIs.
 
 ### System Connections
