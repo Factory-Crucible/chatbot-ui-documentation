@@ -1,29 +1,28 @@
 
-## Components/Buttons Directory
+## components/Buttons Directory
 
-The `components/Buttons` directory is a specialized section of the codebase dedicated to the definition and management of button components. This directory is structured to provide a clear and organized approach to managing different types of buttons within the application. It houses a subdirectory named `SidebarActionButton` which contains the definition and exportation of a specific React component, the `SidebarActionButton`. This component is a button with unique styling and properties that are used across the application. The structure of this directory and its contents play a crucial role in maintaining a clean and efficient codebase, allowing for easy navigation and usage of button components.
+The `components/Buttons` directory is a part of the larger `components` directory, which houses various parts of the chatbot-ui project. This specific directory, `components/Buttons`, is dedicated to defining and managing the various buttons used throughout the user interface of the chatbot. It contains a subdirectory named `SidebarActionButton` which houses two files: `index.ts` and `SidebarActionButton.tsx`. These files define a React component named 'SidebarActionButton', a button with specific styling and two props: 'handleClick' and 'children'. The 'handleClick' prop is a function that manages the button's click event, and the 'children' prop renders any child elements within the button. The button's style includes a minimum width of 20px, padding of 1, and different text colors for normal and hover states.
 
 ### Contents
 
 The `components/Buttons` directory contains one subdirectory:
 
-- `SidebarActionButton`: This subdirectory contains the definition and exportation of the `SidebarActionButton` React component. It houses two files, `index.ts` and `SidebarActionButton.tsx`.
-
-The `SidebarActionButton` subdirectory contains two files:
-
-- `index.ts`: A TypeScript module export file that re-exports the default export from `SidebarActionButton.tsx`, simplifying the import paths for other parts of the codebase.
-- `SidebarActionButton.tsx`: A file that defines the `SidebarActionButton` React component. This component is a button with specific styling and two props: `handleClick` and `children`.
+- `SidebarActionButton`: This subdirectory contains two files, `index.ts` and `SidebarActionButton.tsx`, which define the 'SidebarActionButton' React component. This component is a button with specific styling and two props: 'handleClick' and 'children'. The 'handleClick' prop is a function that handles the button's click event, while the 'children' prop is used to render any child elements within the button.
 
 ### Key Components
 
-The `SidebarActionButton.tsx` file is a critical component of the `components/Buttons` directory. It defines the `SidebarActionButton` React component, a button with specific styling and two props: `handleClick` and `children`. The `handleClick` prop is a function that handles the button's click event, while the `children` prop is used to render any child elements within the button. The button has a minimum width of 20px, padding of 1, and different text colors for normal and hover states. This component is exported as the default export of the file, allowing it to be easily imported and used across the application.
-
-The `index.ts` file, while simple, plays a crucial role in the structure of the codebase. It re-exports the default export from `SidebarActionButton.tsx`, simplifying the import paths for other parts of the codebase. This pattern is common in JavaScript and TypeScript projects and helps maintain a clean and organized codebase.
+The key component in this directory is the `SidebarActionButton` React component, defined in the `SidebarActionButton.tsx` file. This component is a button with specific styling and two props: 'handleClick' and 'children'. The 'handleClick' prop is a function that handles the button's click event, while the 'children' prop is used to render any child elements within the button. This button is used throughout the chatbot-ui project, providing a consistent look and feel for button elements and ensuring a seamless user experience.
 
 ### Usage & Examples
 
-The `SidebarActionButton` component defined in the `SidebarActionButton.tsx` file is used across the application wherever a button with its specific styling and properties is needed. The `handleClick` prop can be passed a function to manage the button's click event, and the `children` prop can be used to render any child elements within the button.
+The `SidebarActionButton` component is used throughout the chatbot-ui project wherever a button with specific styling is required. The 'handleClick' prop is used to manage the button's click event, allowing the button to perform specific actions when clicked. The 'children' prop is used to render any child elements within the button, providing flexibility in the button's content.
 
-For example, the `SidebarActionButton` might be used in a sidebar navigation component. The `handleClick` prop could be passed a function that navigates to a different page when the button is clicked, and the `children` prop could be used to render the button's label.
+For example, the `SidebarActionButton` might be used in a sidebar menu to navigate between different sections of the chatbot. The 'handleClick' prop could be used to change the active section when the button is clicked, and the 'children' prop could be used to render the name of the section within the button.
 
-Please note that the above is a hypothetical example and may not represent the actual usage patterns in the codebase.
+```typescript
+<SidebarActionButton handleClick={changeActiveSection}>
+  {sectionName}
+</SidebarActionButton>
+```
+
+This example demonstrates a typical usage of the `SidebarActionButton` component. The 'handleClick' prop is set to a function that changes the active section, and the 'children' prop is set to the name of the section. This creates a button that changes the active section when clicked and displays the name of the section within the button.

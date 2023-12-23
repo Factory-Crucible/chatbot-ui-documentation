@@ -1,31 +1,30 @@
 
 ## components/Promptbar
 
-The `components/Promptbar` directory is a crucial part of the React application, housing TypeScript files and a subdirectory that together form the `Promptbar` component. This component represents a sidebar in the user interface, providing functions for managing prompts and folders. The `Promptbar` component is not just a standalone entity but is closely tied with its context, state, and related components, all of which are defined within this directory. The structure and organization of this directory reflect the modular design of the `Promptbar` component, with each file and subdirectory playing a specific role in the overall functionality.
+The `components/Promptbar` directory is a crucial part of the chatbot-ui project, serving as the codebase for the 'Promptbar' feature of the application. The 'Promptbar' is a sidebar in the user interface that provides functionality for managing prompts and folders. It is a React component written in TypeScript and is structured into several files and a subdirectory, each serving a specific purpose.
 
 ### Contents
 
-The `components/Promptbar` directory contains four TypeScript files and one subdirectory. Each file contributes to the `Promptbar` component in a unique way:
+The `components/Promptbar` directory contains five TypeScript files and a subdirectory named `components`. The TypeScript files include `index.ts`, `PromptBar.context.tsx`, `Promptbar.tsx`, and `Promptbar.state.tsx`. The `index.ts` file serves as the entry point for the 'Promptbar' component, exporting the default export from the `Promptbar.tsx` file. The `PromptBar.context.tsx` file defines the context for the 'Promptbar' component, including state and handlers for prompts. The `Promptbar.tsx` file is the main component file, representing the sidebar in the UI, with functions for managing prompts and folders. The `Promptbar.state.tsx` file defines the initial state and interface for the 'Promptbar' component.
 
-- `index.ts`: Serves as the entry point for the `Promptbar` component, exporting the default export from the `Promptbar.tsx` file.
-- `PromptBar.context.tsx`: Defines the context for the `Promptbar` component, including state and handlers for prompts.
-- `Promptbar.tsx`: Represents the main component file, managing prompts and folders within the sidebar of the UI.
-- `Promptbar.state.tsx`: Defines the initial state and interface for the `Promptbar` component.
-
-The subdirectory `components/Promptbar/components` contains related components that further enhance the functionality of the `Promptbar`.
+The `components` subdirectory contains related components, including `Prompts.tsx`, `PromptbarSettings.tsx`, `Prompt.tsx`, `PromptModal.tsx`, and `PromptFolders.tsx`. Each of these files exports a React component that contributes to the functionality of the 'Promptbar'.
 
 ### Key Components
 
-The `Promptbar.tsx` file is the heart of this directory, representing the `Promptbar` component that forms a sidebar in the application's UI. It uses various hooks and contexts to manage state and effects, and imports several other components such as `PromptFolders`, `PromptbarSettings`, and `Prompts`. It also imports a context `HomeContext` and a state `Promptbar.state`.
+The `Promptbar.tsx` file is a key component in this directory. It represents the 'Promptbar' sidebar in the user interface and includes functions for managing prompts and folders. It uses various hooks and contexts to manage state and effects, and it imports several other components and contexts to provide its functionality.
 
-The `PromptBar.context.tsx` file is another key component, defining the context for the `Promptbar` component. It outlines the shape of the context, including the state, dispatch function, and handlers for creating, deleting, and updating prompts. This context is then exported for use in other parts of the application, ensuring that the `Promptbar` component can interact effectively with the rest of the application.
+The `PromptBar.context.tsx` file is another critical component. It defines the context for the 'Promptbar' component, including state and handlers for prompts. This context is used throughout the 'Promptbar' component and its subcomponents to manage state and handle user interactions.
+
+The `components` subdirectory contains several important components. The `Prompt.tsx` file exports a 'PromptComponent' that handles actions, updates, and deletions of prompts, and manages local state for various functionalities. The `PromptModal.tsx` file exports a component that renders a modal for editing a prompt, with internationalization support. The `PromptFolders.tsx` file exports a component that handles the display and functionality of folders within the 'Promptbar', including the dropping of prompts into folders.
 
 ### Usage & Examples
 
-The `Promptbar` component, defined in `Promptbar.tsx`, is used within the codebase to represent a sidebar in the application's UI. It provides functions for managing prompts and folders, making it a crucial part of the application's functionality. For example, the `Promptbar` component might be used in the main application file to render the sidebar of the UI.
+The 'Promptbar' component is used within the chatbot-ui project to provide a sidebar in the user interface for managing prompts and folders. The `Promptbar.tsx` file is the main component file, and it uses the context defined in the `PromptBar.context.tsx` file to manage state and handle user interactions.
 
-The `PromptBar.context.tsx` file is used to provide a context for the `Promptbar` component. This context includes the state and handlers for prompts, allowing other parts of the application to interact with the `Promptbar` component. For instance, a function in another part of the application might use the `handleCreatePrompt` handler from the `PromptbarContext` to create a new prompt.
+The `Prompt.tsx` file exports a 'PromptComponent' that is used to handle actions, updates, and deletions of prompts. It manages local state for showing a modal, deleting, renaming, and the rename value. It also handles drag events for the prompt and uses effects to manage the renaming and deleting states.
 
-The `Promptbar.state.tsx` file is used to define the initial state and interface for the `Promptbar` component. This state includes a `searchTerm` and `filteredPrompts`, which are used within the `Promptbar` component to manage the display and filtering of prompts. For example, the `Promptbar` component might use the `searchTerm` state to filter the list of prompts based on the user's input.
+The `PromptModal.tsx` file exports a component that is used to render a modal for editing a prompt. It takes in a prompt object, an onClose function, and an onUpdatePrompt function as props. The prompt object contains name, description, and content properties which are used to initialize state variables.
 
-The `components/Promptbar/components` subdirectory contains related components that are used within the `Promptbar` component to provide additional functionality. For example, the `PromptFolders.tsx` component might be used within the `Promptbar` component to handle the display and functionality of folders within the `Promptbar`.
+The `PromptFolders.tsx` file exports a component that is used to handle the display and functionality of folders within the 'Promptbar'. It handles the dropping of prompts into folders, updating the prompt's folderId when dropped.
+
+The `PromptbarSettings.tsx` file, although currently returning an empty div, is likely to be used in the future to render settings related to the 'Promptbar'.
