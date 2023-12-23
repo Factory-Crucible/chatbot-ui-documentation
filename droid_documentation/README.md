@@ -9,7 +9,7 @@ Welcome to the documentation for the Chatbot UI project. This document serves as
 
 The Chatbot UI project is designed to create a user-friendly interface for interacting with a chatbot. The chatbot is powered by OpenAI and Google APIs, and the UI provides a platform for users to engage in conversations with the chatbot, manage prompts and folders, and adjust settings. The project is a microservice that interacts with other services, such as the OpenAI and Google APIs, to generate responses and search results.
 
-### Technologies-:Used
+### Technologies-:/'"Used
 
 The Chatbot UI project is a Docker-based Node.js application that uses the Next.js framework for server-side rendering. It uses TypeScript for static typing, and React for building the user interface. The project also uses the Tailwind CSS framework for styling, and the i18next library for internationalization. For state management, it uses a custom hook that creates a typed reducer with dispatch and state. For making HTTP requests, it uses another custom hook that provides methods for each HTTP verb.
 
