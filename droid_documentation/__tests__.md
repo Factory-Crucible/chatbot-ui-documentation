@@ -1,24 +1,27 @@
 
-## __tests__ Directory
+# `__tests__` Directory
 
-The `__tests__` directory serves as a dedicated space for testing within the project. It is structured to reflect the organization of the application's codebase, with each subdirectory corresponding to a different part of the application. The directory's primary purpose is to ensure the application's functionality and integrity by validating the behavior of its various components. The tests are organized in a way that mirrors the structure of the application, making it easier to locate and understand the tests related to a specific part of the codebase.
+The `__tests__` directory is a dedicated space for testing in the Factory-Crucible/chatbot-ui-documentation project. It is a critical part of the codebase, ensuring the reliability and correctness of the code. The directory contains a subdirectory named `utils`, which serves as a testing suite for the application's utility functions. Within `utils`, there's another subdirectory named `app`. The `app` subdirectory contains a test file named `importExports.test.ts`. This file is responsible for validating the import and export operations of the application. It ensures that the objects being exported conform to the expected format for each version. Additionally, it tests a function named `cleanData`, which is designed to update data from older export formats to the latest one. The test verifies that the updated data aligns with the expected structure of the current format.
 
-### Contents
+## Contents
 
-The `__tests__` directory contains one subdirectory: `utils`. This subdirectory is a testing suite for the application's utility functions. Within the `utils` directory, there is another subdirectory named `app`, which contains a test file named `importExports.test.ts`.
+The `__tests__` directory contains one subdirectory:
 
-- `__tests__/utils`: This subdirectory is a testing suite for the application's utility functions. It contains a subdirectory named `app`.
-- `__tests__/utils/app`: This subdirectory contains test files for the application's utility functions. Specifically, it includes a file named `importExports.test.ts`.
+- `utils`: This directory serves as a testing suite for the application's utility functions. It contains a subdirectory named `app`, which houses a test file `importExports.test.ts` that validates the functionality of import and export operations.
 
-### Key Components
+## Key Components
 
-The key component within this directory is the `importExports.test.ts` file located in the `__tests__/utils/app` subdirectory. This file is responsible for validating the import and export operations of the application. It ensures that the objects being exported conform to the expected format for each version. Additionally, it tests a function named `cleanData`, which is designed to update data from older export formats to the latest one. The test verifies that the updated data aligns with the expected structure of the current format.
+The `__tests__` directory contains a critical file:
 
-### Usage & Examples
+- `importExports.test.ts`: This file tests utility functions related to import and export operations in the application. It verifies different versions of the export format, ensuring that a given object matches the expected format for each version. The file also tests the 'cleanData' function, which converts data from older export formats to the latest one, and checks that the cleaned data aligns with the expected structure of the latest format.
 
-The `__tests__` directory is used to house all the tests for the application. Each subdirectory within `__tests__` corresponds to a different part of the application, and the tests within each subdirectory validate the functionality of that part of the application.
+## Usage & Examples
 
-For example, the `importExports.test.ts` file within the `__tests__/utils/app` subdirectory tests the import and export operations of the application. It contains several test suites, each of which is dedicated to testing a different version of the export format. Each test suite contains tests that check whether a given object matches the expected format for that version. Here's a simplified example of what these tests might look like:
+The `__tests__` directory is used to house all the test files for the application. The `utils` subdirectory within it contains tests for utility functions, specifically within the `app` subdirectory. The `importExports.test.ts` file within the `app` subdirectory is a representative example of how these test files are structured and used.
+
+The `importExports.test.ts` file contains several test suites, each focusing on a specific aspect of the import and export operations. For example, there are test suites for each version of the export format, checking whether a given object matches the expected format for that version. There's also a test suite for the 'cleanData' function, which converts data from older export formats to the latest one.
+
+Here's a simplified example of what the structure of these tests might look like:
 
 ```typescript
 describe('Export Format Functions', () => {
@@ -30,19 +33,19 @@ describe('Export Format Functions', () => {
       // Test code here
     });
   });
+
   // Similar tests for other versions...
-});
-```
 
-The `importExports.test.ts` file also tests the `cleanData` function, which converts data from older export formats to the latest format. The tests ensure that the cleaned data matches the expected structure of the latest format. Here's a simplified example of what these tests might look like:
-
-```typescript
-describe('cleanData Functions', () => {
-  describe('cleaning v1 data', () => {
-    it('should return the latest format', () => {
-      // Test code here
+  describe('cleanData Functions', () => {
+    describe('cleaning v1 data', () => {
+      it('should return the latest format', () => {
+        // Test code here
+      });
     });
+
+    // Similar tests for other versions...
   });
-  // Similar tests for other versions...
 });
 ```
+
+This structure allows for clear and organized testing of the various aspects of the import and export operations.
