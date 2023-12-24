@@ -1,28 +1,30 @@
 
 ## Hooks Directory
 
-The Hooks directory is a specialized section of the codebase dedicated to housing custom React hooks. These hooks, written in TypeScript, provide reusable logic that can be utilized across the application. The directory contains two key files: `useCreateReducer.ts` and `useFetch.ts`. The `useCreateReducer.ts` file defines a custom hook for creating a typed reducer with dispatch and state, while the `useFetch.ts` file exports a custom hook for making HTTP requests. These hooks are designed to streamline state management and HTTP requests, respectively, and are integral to the application's functionality.
+The `hooks` directory is a specialized section of the codebase that houses custom React hooks. These hooks are designed to encapsulate specific functionalities that are reused across the codebase. The hooks in this directory are `useCreateReducer` and `useFetch`, each defined in their respective TypeScript files. These hooks are integral to the state management and HTTP request handling within the chatbot-ui project.
 
 ### Contents
 
-The Hooks directory is composed of two TypeScript files:
+The `hooks` directory contains two TypeScript files:
 
-1. `useCreateReducer.ts`: This file defines a custom React hook, `useCreateReducer`, which is designed to create a reducer with typed dispatch and state. It also defines two TypeScript types, `FieldNames` and `ActionType`, which are used to manage the reducer's initial state and dispatch action.
+- `useCreateReducer.ts`: This file defines a custom React hook named `useCreateReducer` that is designed to create a reducer with typed dispatch and state. It also defines two TypeScript types: `FieldNames` and `ActionType`.
 
-2. `useFetch.ts`: This file exports a custom React hook, `useFetch`, which is used for making HTTP requests. It defines two types, `RequestModel` and `RequestWithBodyModel`, to structure the request parameters. The hook provides methods for each HTTP verb and uses a helper function, `handleFetch`, to perform the actual fetch operation.
+- `useFetch.ts`: This file exports a custom React hook named `useFetch` for making HTTP requests. It defines two types, `RequestModel` and `RequestWithBodyModel`, to structure the request parameters.
 
 ### Key Components
 
-The Hooks directory contains two critical files that define custom hooks:
+The `hooks` directory contains two key components:
 
-- `useCreateReducer.ts`: The `useCreateReducer` hook defined in this file is a key component in state management within the application. By creating a typed reducer with dispatch and state, it provides a robust and type-safe way to manage state changes. The `FieldNames` and `ActionType` types further enhance the type safety and predictability of the reducer.
+- `useCreateReducer`: This hook is a crucial part of the state management in the chatbot-ui project. It creates a reducer with typed dispatch and state, ensuring type safety and reducing the likelihood of runtime errors. The `FieldNames` and `ActionType` types defined in this file are used to manage the reducer's initial state and dispatch action, providing a structured and predictable state management system.
 
-- `useFetch.ts`: The `useFetch` hook defined in this file is crucial for making HTTP requests within the application. By providing methods for each HTTP verb and handling the construction of the request and response, it simplifies the process of making requests and handling responses. The `RequestModel` and `RequestWithBodyModel` types ensure that the request parameters are structured correctly.
+- `useFetch`: This hook is responsible for making HTTP requests within the chatbot-ui project. It provides methods for each HTTP verb (get, post, put, patch, delete), encapsulating the logic for making requests and handling responses. The `RequestModel` and `RequestWithBodyModel` types defined in this file structure the request parameters, ensuring that requests are made correctly and consistently.
 
 ### Usage & Examples
 
-The hooks defined in the Hooks directory are used throughout the application to manage state and make HTTP requests.
+The hooks in this directory are used throughout the chatbot-ui project to manage state and make HTTP requests.
 
-- `useCreateReducer`: This hook is used when there is a need to manage complex state with a reducer. It provides a type-safe way to define the reducer's initial state and dispatch actions. For example, it could be used to manage the state of a form, with different actions for each form field.
+- `useCreateReducer` is used to create reducers with typed dispatch and state. It takes an object with an `initialState` property as an argument. For example, it might be used to create a reducer for managing the state of a chat conversation.
 
-- `useFetch`: This hook is used whenever an HTTP request needs to be made. It provides a simple and consistent way to make requests and handle responses. For example, it could be used to fetch data from an API, post data to an API, or delete data from an API.
+- `useFetch` is used to make HTTP requests. It returns an object with methods for each HTTP verb. These methods use a helper function `handleFetch` to perform the actual fetch operation. For example, the `get` method might be used to fetch chatbot data from an API.
+
+Please note that the above examples are illustrative and may not represent actual usage patterns in the chatbot-ui project.

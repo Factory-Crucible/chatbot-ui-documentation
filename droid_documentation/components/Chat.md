@@ -1,46 +1,46 @@
 
 ## components/Chat Directory
 
-The `components/Chat` directory is a crucial part of the codebase, housing the React components that construct the chat interface of the application. This directory is responsible for the user interaction with the chat system, including message input and display, error handling, and various settings adjustments. The components within this directory work together to provide a seamless and interactive chat experience, with each component handling a specific aspect of the chat functionality.
+The `components/Chat` directory is a crucial part of the chatbot-ui project, serving as the core of the chat interface. It contains a collection of React components that together form the chat functionality of the application. These components handle various aspects of the chat interface, including message input, message display, error handling, model selection, temperature adjustment, system prompts, and more. Each component is designed to be modular and reusable, ensuring that the chat interface is scalable and maintainable.
 
 ### Contents
 
-The `components/Chat` directory contains a collection of TypeScript files, each representing a unique React component. There are no subdirectories within this directory. The files include:
+The `components/Chat` directory contains several TypeScript files, each representing a specific React component. The directory does not contain any subdirectories. The components in this directory are:
 
-- `Regenerate.tsx`: Provides a user interface for regenerating a response when an error occurs in the chat system.
-- `PluginSelect.tsx`: Provides a dropdown selection interface for different plugins.
-- `Temperature.tsx`: Provides a slider for adjusting the 'temperature' parameter in a chatbot conversation.
-- `MemoizedChatMessage.tsx`: Exports a memoized version of the 'ChatMessage' component to optimize rendering.
-- `ErrorMessageDiv.tsx`: Displays an error message in a structured format.
 - `ModelSelect.tsx`: Provides a dropdown selection interface for different AI models.
-- `ChatLoader.tsx`: Displays a loading animation for the chat interface.
-- `SystemPrompt.tsx`: Handles the system prompts in a chat conversation.
+- `ErrorMessageDiv.tsx`: Displays error messages in a structured format.
+- `Temperature.tsx`: Provides a slider for adjusting the 'temperature' parameter in a chatbot conversation.
+- `SystemPrompt.tsx`: Handles system prompts in a chat conversation.
+- `Regenerate.tsx`: Provides a user interface for regenerating a response when an error occurs.
+- `PluginSelect.tsx`: Provides a dropdown selection interface for different plugins.
 - `VariableModal.tsx`: Provides a modal for handling variables in a chat application.
-- `ChatMessage.tsx`: Represents a single chat message in a chat interface.
-- `ChatInput.tsx`: Provides the input functionality for a chat application.
-- `Chat.tsx`: Handles the chat functionality of the application.
 - `PromptList.tsx`: Renders a list of prompts.
+- `Chat.tsx`: Handles the chat functionality of the application.
+- `MemoizedChatMessage.tsx`: Optimizes the rendering of chat messages.
+- `ChatMessage.tsx`: Represents a single chat message.
+- `ChatInput.tsx`: Provides the input functionality for a chat application.
+- `ChatLoader.tsx`: Displays a loading animation for the chat interface.
 
 ### Key Components
 
-Several components play a critical role in the chat functionality:
+The `components/Chat` directory contains several key components that are critical to the functioning of the chat interface:
 
-- `Chat.tsx` is the central component that manages the chat functionality. It handles sending messages, updating conversations, and managing responses. It also manages scrolling and message updates.
+- `Chat.tsx`: This component is the heart of the chat interface. It handles the main chat functionality, including sending messages, updating conversations, and handling responses. It also manages scrolling and message updates.
 
-- `ChatInput.tsx` is responsible for the input functionality. It handles changes, sends messages, stops the conversation, initializes the modal, handles key down events, parses variables, updates the prompt list visibility, selects prompts, and submits the form.
+- `ChatInput.tsx`: This component provides the input functionality for the chat interface. It handles changes, sends messages, stops the conversation, initializes the modal, handles key down events, parses variables, updates the prompt list visibility, selects prompts, and submits the form.
 
-- `ChatMessage.tsx` represents a single chat message. It provides functionalities to edit, delete, and copy a chat message. It also handles the display of the message based on the role of the sender (user or assistant).
+- `ChatMessage.tsx`: This component represents a single chat message. It handles the display of the message based on the role of the sender (user or assistant). It also includes a Markdown parser for the message content, with custom renderers for code blocks, tables, and table cells.
 
-- `SystemPrompt.tsx` handles the system prompts in a chat conversation. It manages changes in the prompt, resizes the textarea, and handles clicks outside the prompt list.
+- `SystemPrompt.tsx`: This component handles the system prompts in a chat conversation. It maintains several pieces of state, including the current value of the prompt, the active prompt index, whether the prompt list is visible, the prompt input value, an array of variables, and whether a modal is visible.
 
 ### Usage & Examples
 
-The components in this directory are used to build the chat interface of the application. For instance, `Chat.tsx` is the main component that manages the chat functionality. It uses the `ChatInput.tsx` component for user input and the `ChatMessage.tsx` component for displaying each message in the conversation.
+The components in the `components/Chat` directory are used throughout the chatbot-ui project to create the chat interface. They are imported and used in various parts of the codebase, including the home page and other components.
 
-`ChatInput.tsx` provides the input functionality for the chat. It uses the `HomeContext` to access the state and dispatch function of the home page. It maintains several pieces of state including the content of the message, whether the user is typing, whether the prompt list is visible, the active prompt index, the prompt input value, the variables, whether the modal is visible, whether the plugin select is visible, and the selected plugin.
+For example, the `Chat.tsx` component is used in the home page to provide the main chat functionality. It is passed a `stopConversationRef` prop, which is a reference that indicates whether the conversation should be stopped. The `Chat.tsx` component uses this reference to stop the conversation when necessary.
 
-`ChatMessage.tsx` represents a single chat message. It provides functionalities to edit, delete, and copy a chat message. It also handles the display of the message based on the role of the sender (user or assistant).
+The `ChatInput.tsx` component is also used in the home page. It is passed several props, including functions for sending messages, regenerating the chat, scrolling down, and references for stopping the conversation and the textarea.
 
-`SystemPrompt.tsx` handles the system prompts in a chat conversation. It takes in a conversation object, an array of prompts, and a function to change the prompt as props. It maintains several pieces of state, including the current value of the prompt, the active prompt index, whether the prompt list is visible, the prompt input value, an array of variables, and whether a modal is visible.
+The `ChatMessage.tsx` component is used in the `Chat.tsx` component to display each message in the chat. It is passed a `message` prop, which is the message to be displayed, and a `messageIndex` prop, which is the index of the message in the conversation.
 
-Please note that the code snippets provided in the DIRECTORY_STRUCTURE are not representative of typical usage patterns. They are merely skeletons of the components.
+The `SystemPrompt.tsx` component is used in the `Chat.tsx` component to handle system prompts. It is passed a `conversation` prop, which is the current conversation, a `prompts` prop, which is an array of prompts, and an `onChangePrompt` prop, which is a function that changes the prompt.
