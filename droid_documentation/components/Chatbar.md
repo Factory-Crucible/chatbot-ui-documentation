@@ -1,5 +1,5 @@
 
-## components/Chatbar
+## components/Chatbar Directory
 
 The `components/Chatbar` directory is a crucial part of a chatbot UI project. It houses the primary TypeScript files that define the behavior and state of the Chatbar component, which is a key part of the user interface. The Chatbar component is responsible for managing conversations, handling API keys, and managing plugin keys. The directory also contains a subdirectory, `components/Chatbar/components`, which includes additional TypeScript files that export various React components used in the chatbot UI. These components handle settings, conversations, chat folders, and plugin keys. The structure of this directory and its contents reflect the modular design of the chatbot UI, with each file and subdirectory playing a specific role in the overall functionality of the Chatbar component.
 
