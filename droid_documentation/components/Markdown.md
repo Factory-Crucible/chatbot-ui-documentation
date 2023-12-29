@@ -1,28 +1,65 @@
 
-## The 'components/Markdown' Directory
+## `components/Markdown` Directory
 
-The 'components/Markdown' directory is a specialized section of the codebase dedicated to handling markdown rendering and display within the application. It houses two TypeScript components, 'MemoizedReactMarkdown.tsx' and 'CodeBlock.tsx', each with a distinct role in the markdown rendering process. The 'MemoizedReactMarkdown.tsx' component is responsible for rendering markdown content, while 'CodeBlock.tsx' is designed to display code blocks in markdown format. These components are integral to the application's ability to display markdown content and code snippets in a user-friendly and efficient manner.
+The `components/Markdown` directory is a specialized section of the codebase dedicated to handling markdown rendering within the chatbot UI. It contains two TypeScript component files, `MemoizedReactMarkdown.tsx` and `CodeBlock.tsx`, which are responsible for rendering markdown content and displaying code blocks in markdown format respectively. These components are integral to the chatbot UI as they enhance the user experience by providing a visually appealing and efficient way to display markdown content and code snippets.
 
 ### Contents
 
-The 'components/Markdown' directory is a compact and focused part of the codebase, containing only two TypeScript files and no subdirectories. The two files, 'MemoizedReactMarkdown.tsx' and 'CodeBlock.tsx', are both functional components that contribute to the application's markdown rendering capabilities.
+The `components/Markdown` directory is a simple, yet crucial part of the codebase. It contains two TypeScript files:
 
-1. 'MemoizedReactMarkdown.tsx': This file exports a memoized functional component that uses the 'react-markdown' library to render markdown content. The component is optimized for performance, preventing unnecessary re-renders by using React's 'memo' function.
+- `MemoizedReactMarkdown.tsx`: This file exports a memoized functional component that uses the 'react-markdown' library to render markdown content. The component is optimized for performance by preventing unnecessary re-renders through memoization.
 
-2. 'CodeBlock.tsx': This file exports a functional component that displays code blocks in markdown format. It uses 'react-syntax-highlighter' for syntax highlighting and provides functionality to copy the code to clipboard and download the code as a file.
+- `CodeBlock.tsx`: This file exports a functional component that displays code blocks in markdown format. It uses 'react-syntax-highlighter' for syntax highlighting and provides functionality to copy the code to clipboard and download the code as a file.
+
+There are no subdirectories within the `components/Markdown` directory.
 
 ### Key Components
 
-The 'MemoizedReactMarkdown.tsx' and 'CodeBlock.tsx' components are the key elements within the 'components/Markdown' directory.
+The `components/Markdown` directory houses two key components that play a significant role in the chatbot UI:
 
-'MemoizedReactMarkdown.tsx' is a critical component as it is responsible for rendering markdown content within the application. It uses the 'react-markdown' library to achieve this. The component is memoized using React's 'memo' function, which optimizes performance by preventing unnecessary re-renders. This is particularly important in a dynamic application where markdown content may frequently change.
+- `MemoizedReactMarkdown`: This component is responsible for rendering markdown content within the chatbot UI. It uses the 'react-markdown' library to convert markdown syntax into HTML. The component is memoized using React's 'memo' function, which optimizes performance by preventing unnecessary re-renders. This is particularly useful in a chatbot UI where the markdown content may not change frequently.
 
-'CodeBlock.tsx' is another essential component in this directory. It is designed to display code blocks in markdown format, a common requirement in many applications. The component uses 'react-syntax-highlighter' for syntax highlighting, enhancing readability of the code. It also provides functionality to copy the code to clipboard and download the code as a file, enhancing the user experience.
+- `CodeBlock`: This component is used to display code blocks in markdown format. It enhances the user experience by providing syntax highlighting using 'react-syntax-highlighter', and additional functionalities like copying the code to clipboard and downloading the code as a file. The component also uses 'next-i18next' for internationalization, making it adaptable for different locales.
 
 ### Usage & Examples
 
-The components in the 'components/Markdown' directory are used whenever the application needs to render markdown content or display code blocks in markdown format.
+The components within the `components/Markdown` directory are used throughout the chatbot UI to render markdown content and display code blocks.
 
-For instance, the 'MemoizedReactMarkdown' component could be used to render user-generated markdown content in a blog post or comment section. It would be used like any other React component, with the markdown content passed as children.
+For instance, the `MemoizedReactMarkdown` component could be used in a chat message component to render markdown content received from the chatbot. Here's a simplified example:
 
-The 'CodeBlock' component could be used in a similar context, but specifically for displaying code blocks within the markdown content. The 'language' and 'value' props would be passed to specify the programming language of the code block and the actual code to be displayed, respectively.
+```typescript
+import { MemoizedReactMarkdown } from './components/Markdown/MemoizedReactMarkdown';
+
+function ChatMessage({ message }) {
+  return (
+    <div className="chat-message">
+      <MemoizedReactMarkdown>{message.content}</MemoizedReactMarkdown>
+    </div>
+  );
+}
+```
+
+The `CodeBlock` component could be used within the `MemoizedReactMarkdown` component to render code blocks in the markdown content. Here's a simplified example:
+
+```typescript
+import { CodeBlock } from './components/Markdown/CodeBlock';
+
+function MarkdownRenderer({ content }) {
+  return (
+    <ReactMarkdown
+      components={{
+        code({node, inline, className, children, ...props}) {
+          const match = /language-(\w+)/.exec(className || '')
+          return !inline && match
+            ? <CodeBlock language={match[1]} value={String(children).replace(/\n$/, '')} {...props} />
+            : <code className={className} {...props}>{children}</code>
+        }
+      }}
+    >
+      {content}
+    </ReactMarkdown>
+  );
+}
+```
+
+These examples illustrate how the components in the `components/Markdown` directory are used within the chatbot UI to render markdown content and display code blocks in an efficient and visually appealing manner.
