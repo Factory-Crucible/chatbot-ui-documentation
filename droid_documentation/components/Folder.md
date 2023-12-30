@@ -1,43 +1,43 @@
 
-## components/Folder Directory
+## components/Folder
 
-The `components/Folder` directory is a specialized section of the codebase dedicated to the implementation of a React component that represents a folder in a file system. This directory is composed of two TypeScript files, `index.ts` and `Folder.tsx`, which work in tandem to provide a robust and interactive folder component. The `Folder.tsx` file is the heart of this directory, encapsulating the logic, state management, and rendering of the folder component. The `index.ts` file, on the other hand, serves as a conduit for streamlined imports from this directory. The absence of subdirectories in this directory underscores its focused purpose.
+The `components/Folder` directory is a part of the chatbot-ui project's component structure, specifically designed to represent a folder in a file system within the user interface. This directory contains two main files, `Folder.tsx` and `index.ts`, which work together to provide a reusable and interactive Folder component. The Folder component is a critical part of the chatbot-ui's file system representation, providing functionality for renaming, deleting, and handling drag and drop events for folders.
 
 ### Contents
 
-The `components/Folder` directory houses two TypeScript files:
+The `components/Folder` directory contains two files:
 
-1. `index.ts`: This file simplifies the import process from this directory by exporting the default export from the `Folder.tsx` file. This is a common pattern in JavaScript and TypeScript projects to streamline imports.
-
-2. `Folder.tsx`: This is a React component file that exports a single component, `Folder`, which represents a folder in a file system. The component accepts several props, maintains state, and renders a button and an input field. It also includes handlers for renaming and deleting the folder, as well as for drag and drop events.
+- `Folder.tsx`: This is a React component file that exports a single component, `Folder`. The Folder component represents a folder in a file system, providing interactive functionality and state management for each folder instance in the user interface.
+- `index.ts`: This is a TypeScript file that simplifies imports from this directory by exporting the default export from the `Folder.tsx` file.
 
 ### Key Components
 
-The `Folder.tsx` file is the cornerstone of this directory. It exports a `Folder` component that encapsulates the functionality of a folder in a file system. The component accepts several props, including the current folder, a search term, a drop handler, and a list of folder components. It maintains several pieces of state, including whether it is being deleted or renamed, the new name if it is being renamed, and whether it is open or closed. The component renders a button that can be clicked to open or close the folder, and an input field for renaming the folder. It also includes handlers for renaming and deleting the folder, as well as for drag and drop events. The component uses several icons from the '@tabler/icons-react' package.
+The key component in this directory is the `Folder` component, defined and exported in the `Folder.tsx` file. This component is crucial to the chatbot-ui project as it provides the interactive representation of a folder in the file system. It accepts several props, maintains its own state, and renders a button and an input field. The component also includes handlers for renaming and deleting the folder, as well as for drag and drop events.
 
 ### Usage & Examples
 
-The `Folder` component is used throughout the codebase to represent a folder in a file system. It is a versatile component that can be customized through its props. For instance, the `currentFolder` prop can be used to set the folder that the component represents, the `searchTerm` prop can be used to filter the contents of the folder, and the `handleDrop` prop can be used to handle drag and drop events.
+The `Folder` component is used within the chatbot-ui project to represent a folder in the file system. It is a reusable component that can be instantiated with different props to represent different folders. The component accepts several props, including the current folder, a search term, a drop handler, and a list of folder components.
 
-Here is an example of how the `Folder` component might be used:
+Here is a simplified example of how the `Folder` component might be used:
 
 ```typescript
 import Folder from './components/Folder';
 
-const App = () => {
-  const handleDrop = (e, folder) => {
-    // Handle drop event
-  };
+const MyComponent = () => {
+  const currentFolder = { /* folder data */ };
+  const searchTerm = 'my search term';
+  const handleDrop = (e, folder) => { /* handle drop event */ };
+  const folderComponent = [ /* list of folder components */ ];
 
   return (
     <Folder
-      currentFolder={myFolder}
-      searchTerm={mySearchTerm}
+      currentFolder={currentFolder}
+      searchTerm={searchTerm}
       handleDrop={handleDrop}
-      folderComponent={myFolderComponents}
+      folderComponent={folderComponent}
     />
   );
 };
 ```
 
-In this example, the `Folder` component is imported from the `components/Folder` directory and used in the `App` component. The `currentFolder`, `searchTerm`, `handleDrop`, and `folderComponent` props are passed to the `Folder` component.
+In this example, the `Folder` component is imported and used in another component, `MyComponent`. The `Folder` component is given several props, including `currentFolder`, `searchTerm`, `handleDrop`, and `folderComponent`. These props are used by the `Folder` component to manage its state and render the appropriate user interface.
