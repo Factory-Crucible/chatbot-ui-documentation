@@ -1,29 +1,26 @@
 
-## Components/Buttons Directory
+## components/Buttons
 
-The `components/Buttons` directory is a specialized section of the codebase dedicated to the definition and management of button components. This directory is structured to provide a clear and organized approach to managing different types of buttons within the application. It houses a subdirectory named `SidebarActionButton` which contains the definition and exportation of a specific React component, the `SidebarActionButton`. This component is a button with unique styling and properties that are used across the application. The structure of this directory and its contents play a crucial role in maintaining a clean and efficient codebase, allowing for easy navigation and usage of button components.
+The `components/Buttons` directory is a part of the larger `components` directory, which houses various parts of the project. This specific directory, `components/Buttons`, is dedicated to defining and managing the button components used throughout the user interface of the chatbot. It contains a subdirectory named `SidebarActionButton` which defines a specific type of button used in the sidebar of the chatbot UI.
 
 ### Contents
 
 The `components/Buttons` directory contains one subdirectory:
 
-- `SidebarActionButton`: This subdirectory contains the definition and exportation of the `SidebarActionButton` React component. It houses two files, `index.ts` and `SidebarActionButton.tsx`.
-
-The `SidebarActionButton` subdirectory contains two files:
-
-- `index.ts`: A TypeScript module export file that re-exports the default export from `SidebarActionButton.tsx`, simplifying the import paths for other parts of the codebase.
-- `SidebarActionButton.tsx`: A file that defines the `SidebarActionButton` React component. This component is a button with specific styling and two props: `handleClick` and `children`.
+- `SidebarActionButton`: This subdirectory houses the definition and export of the `SidebarActionButton` component. It contains two files: `index.ts` and `SidebarActionButton.tsx`.
 
 ### Key Components
 
-The `SidebarActionButton.tsx` file is a critical component of the `components/Buttons` directory. It defines the `SidebarActionButton` React component, a button with specific styling and two props: `handleClick` and `children`. The `handleClick` prop is a function that handles the button's click event, while the `children` prop is used to render any child elements within the button. The button has a minimum width of 20px, padding of 1, and different text colors for normal and hover states. This component is exported as the default export of the file, allowing it to be easily imported and used across the application.
-
-The `index.ts` file, while simple, plays a crucial role in the structure of the codebase. It re-exports the default export from `SidebarActionButton.tsx`, simplifying the import paths for other parts of the codebase. This pattern is common in JavaScript and TypeScript projects and helps maintain a clean and organized codebase.
+- `SidebarActionButton`: This is a React component defined in the `SidebarActionButton.tsx` file. It represents a button with specific styling and two props: `handleClick` and `children`. The `handleClick` prop is a function that manages the button's click event, and the `children` prop renders any child elements within the button.
 
 ### Usage & Examples
 
-The `SidebarActionButton` component defined in the `SidebarActionButton.tsx` file is used across the application wherever a button with its specific styling and properties is needed. The `handleClick` prop can be passed a function to manage the button's click event, and the `children` prop can be used to render any child elements within the button.
+The `SidebarActionButton` component is used throughout the codebase wherever a button with its specific styling and functionality is needed, particularly in the sidebar of the chatbot UI. The `handleClick` prop is used to pass a function that will be executed when the button is clicked, and the `children` prop is used to render any child elements within the button.
 
-For example, the `SidebarActionButton` might be used in a sidebar navigation component. The `handleClick` prop could be passed a function that navigates to a different page when the button is clicked, and the `children` prop could be used to render the button's label.
+```typescript
+<SidebarActionButton handleClick={this.handleButtonClick}>
+  <Icon />
+</SidebarActionButton>
+```
 
-Please note that the above is a hypothetical example and may not represent the actual usage patterns in the codebase.
+In the above example, an `Icon` component is passed as a child to the `SidebarActionButton`, and `this.handleButtonClick` is passed as the `handleClick` prop to handle the button's click event.
