@@ -1,18 +1,40 @@
 
-## The 'styles' Directory
+## Styles Directory
 
-The 'styles' directory serves as the central hub for the project's global styling. It is home to the 'globals.css' file, which is a critical component in defining the overall look and feel of the project. This file leverages the power of the Tailwind CSS framework, a utility-first CSS framework, to import base, components, and utilities. It also includes custom styles for the webkit scrollbar and sets the HTML document's background color. The 'globals.css' file is designed to be responsive, with a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. It also includes specific styles for 'pre' elements that contain a 'div' with the class 'codeblock', removing their padding. The 'styles' directory does not contain any subdirectories, keeping the global styles centralized and easily accessible.
+The `styles` directory is a dedicated space for the global styling of the project. It houses a single file, `globals.css`, which is instrumental in defining the look and feel of the entire application. This file is responsible for importing the necessary components from the Tailwind CSS framework and applying custom styles to certain elements. The `styles` directory does not contain any subdirectories, emphasizing its singular focus on global styling.
 
 ### Contents
 
-The 'styles' directory contains a single file:
+The `styles` directory contains one file:
 
-- 'globals.css': This is a Cascading Style Sheet (CSS) file that contains global styles for the project. It includes the import of base, components, and utilities from Tailwind CSS, a utility-first CSS framework. The file also contains custom styles for the webkit scrollbar, including its track, thumb, and corner, with different styles for hover states. It sets the background color of the HTML document to a dark shade. Additionally, it contains a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. Lastly, it removes padding from 'pre' elements that contain a 'div' with the class 'codeblock'.
+- `globals.css`: This is a CSS file that holds the global styles for the project. It imports base, components, and utilities from the Tailwind CSS framework and includes custom styles for the webkit scrollbar. The file also sets the HTML document's background color to a dark shade. It contains a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. Additionally, it removes padding from 'pre' elements that contain a 'div' with the class 'codeblock'.
 
 ### Key Components
 
-The 'globals.css' file is the key component of the 'styles' directory. It is responsible for the global styling of the project. The file's importance lies in its ability to define the overall aesthetic of the project, ensuring consistency across all pages. It leverages the Tailwind CSS framework to import base, components, and utilities, providing a robust set of tools for styling. The file also includes custom styles for the webkit scrollbar and sets the HTML document's background color. It is designed to be responsive, with a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. It also includes specific styles for 'pre' elements that contain a 'div' with the class 'codeblock', removing their padding.
+The `globals.css` file is the key component in this directory. It serves as the central location for defining the global styles of the project. The file is responsible for importing the necessary components from the Tailwind CSS framework, which is a utility-first CSS framework. This allows for a more efficient and maintainable approach to styling. The file also contains custom styles for the webkit scrollbar, providing a consistent and visually appealing scrollbar across different web browsers. It also includes a media query for screens with a maximum width of 720px, ensuring the application is responsive and user-friendly on smaller screens.
 
 ### Usage & Examples
 
-The 'globals.css' file is used to define the global styles for the project. It is included in the HTML document's head, allowing the styles to be applied across the entire project. The file is structured with the import of base, components, and utilities from the Tailwind CSS framework at the top, followed by custom styles for the webkit scrollbar and the setting of the HTML document's background color. It also includes a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. Lastly, it removes padding from 'pre' elements that contain a 'div' with the class 'codeblock'. This structure ensures that the global styles are applied consistently and efficiently across the project.
+The `globals.css` file is used to define the global styles for the project. It is loaded by the Next.js application and applied to the entire project. The file is written in CSS, a language that describes the style of an HTML document. Here is an example of how the file might be used:
+
+```css
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html {
+  background-color: #1a202c;
+}
+
+@media (max-width: 720px) {
+  pre {
+    width: 90%;
+  }
+}
+
+pre > div.codeblock {
+  padding: 0;
+}
+```
+
+In this example, the file first imports the necessary components from the Tailwind CSS framework. It then sets the background color of the HTML document to a dark shade. It includes a media query for screens with a maximum width of 720px, adjusting the width of 'pre' elements under this condition. Lastly, it removes padding from 'pre' elements that contain a 'div' with the class 'codeblock'.
