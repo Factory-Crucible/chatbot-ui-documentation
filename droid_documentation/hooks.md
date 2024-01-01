@@ -1,28 +1,49 @@
 
-## Hooks Directory
+# `hooks` Directory
 
-The Hooks directory is a specialized section of the codebase dedicated to housing custom React hooks. These hooks, written in TypeScript, provide reusable logic that can be utilized across the application. The directory contains two key files: `useCreateReducer.ts` and `useFetch.ts`. The `useCreateReducer.ts` file defines a custom hook for creating a typed reducer with dispatch and state, while the `useFetch.ts` file exports a custom hook for making HTTP requests. These hooks are designed to streamline state management and HTTP requests, respectively, and are integral to the application's functionality.
+The `hooks` directory is a specialized section of the codebase that houses custom React hooks. These hooks, defined within TypeScript files, are designed to provide reusable logic for state management and HTTP requests. The directory contains two files: `useCreateReducer.ts` and `useFetch.ts`. Each file exports a custom hook that encapsulates specific functionality, allowing for code reuse and separation of concerns.
 
-### Contents
+## Contents
 
-The Hooks directory is composed of two TypeScript files:
+The `hooks` directory contains the following files:
 
-1. `useCreateReducer.ts`: This file defines a custom React hook, `useCreateReducer`, which is designed to create a reducer with typed dispatch and state. It also defines two TypeScript types, `FieldNames` and `ActionType`, which are used to manage the reducer's initial state and dispatch action.
+- `useCreateReducer.ts`: This TypeScript file defines a custom React hook named `useCreateReducer`. The hook is designed to create a reducer with typed dispatch and state. It also defines two TypeScript types: `FieldNames` and `ActionType`.
+- `useFetch.ts`: This TypeScript file exports a custom React hook named `useFetch`. The hook provides methods for making HTTP requests. It also defines two types, `RequestModel` and `RequestWithBodyModel`, to structure the request parameters.
 
-2. `useFetch.ts`: This file exports a custom React hook, `useFetch`, which is used for making HTTP requests. It defines two types, `RequestModel` and `RequestWithBodyModel`, to structure the request parameters. The hook provides methods for each HTTP verb and uses a helper function, `handleFetch`, to perform the actual fetch operation.
+## Key Components
 
-### Key Components
+The `hooks` directory contains two key components:
 
-The Hooks directory contains two critical files that define custom hooks:
+- `useCreateReducer`: This custom hook is designed to create a reducer with typed dispatch and state. It takes an object with an `initialState` property as an argument. The hook uses `useReducer` and `useMemo` from React to manage state and optimize performance.
+- `useFetch`: This custom hook provides methods for making HTTP requests. Each method uses a helper function `handleFetch` to perform the actual fetch operation. The `handleFetch` function takes care of constructing the request URL, body, and headers, and handles the response based on its content type. It also handles errors and throws them for further handling.
 
-- `useCreateReducer.ts`: The `useCreateReducer` hook defined in this file is a key component in state management within the application. By creating a typed reducer with dispatch and state, it provides a robust and type-safe way to manage state changes. The `FieldNames` and `ActionType` types further enhance the type safety and predictability of the reducer.
+## Usage & Examples
 
-- `useFetch.ts`: The `useFetch` hook defined in this file is crucial for making HTTP requests within the application. By providing methods for each HTTP verb and handling the construction of the request and response, it simplifies the process of making requests and handling responses. The `RequestModel` and `RequestWithBodyModel` types ensure that the request parameters are structured correctly.
+The hooks defined in the `hooks` directory are used throughout the codebase to manage state and make HTTP requests.
 
-### Usage & Examples
+For instance, the `useCreateReducer` hook can be used to create a reducer with typed dispatch and state. Here's a simplified example:
 
-The hooks defined in the Hooks directory are used throughout the application to manage state and make HTTP requests.
+```typescript
+import { useCreateReducer } from './hooks/useCreateReducer';
 
-- `useCreateReducer`: This hook is used when there is a need to manage complex state with a reducer. It provides a type-safe way to define the reducer's initial state and dispatch actions. For example, it could be used to manage the state of a form, with different actions for each form field.
+const { state, dispatch } = useCreateReducer({ initialState: { count: 0 } });
 
-- `useFetch`: This hook is used whenever an HTTP request needs to be made. It provides a simple and consistent way to make requests and handle responses. For example, it could be used to fetch data from an API, post data to an API, or delete data from an API.
+dispatch({ type: 'increment' });
+```
+
+Similarly, the `useFetch` hook can be used to make HTTP requests. Here's a simplified example:
+
+```typescript
+import { useFetch } from './hooks/useFetch';
+
+const { get } = useFetch();
+
+const fetchData = async () => {
+  const data = await get('/api/data');
+  console.log(data);
+};
+
+fetchData();
+```
+
+Please note that these examples are simplified and may not represent the actual usage within the codebase. Always refer to the actual code for accurate usage patterns.
