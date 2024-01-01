@@ -1,41 +1,51 @@
 
-## components/Spinner
+## `components/Spinner` Directory
 
-The `components/Spinner` directory is dedicated to the implementation of a Spinner React component. This component is a visual element that displays a spinning animation, typically used to indicate a loading state in a user interface. The directory is structured in a way that it encapsulates all the necessary files related to the Spinner component, making it a self-contained unit within the codebase. This structure not only promotes modularity but also simplifies the process of importing the Spinner component in other parts of the project.
+The `components/Spinner` directory is dedicated to the Spinner component of the chatbot-ui project. This component is a crucial part of the user interface, providing a visual indication of loading states within the application. The Spinner component is a React component that displays a spinning animation, typically used when the application is processing data or waiting for a response from an API request. The directory contains two TypeScript files: `Spinner.tsx` and `index.ts`.
 
 ### Contents
 
-The `components/Spinner` directory contains two TypeScript files:
+The `components/Spinner` directory contains two files:
 
-1. `Spinner.tsx`: This file defines the Spinner component. It is a React component that renders a spinner, typically used to indicate loading state in a user interface. The Spinner component accepts two optional props: 'size' and 'className'. The 'size' prop determines the height and width of the spinner, defaulting to '1em' if not provided. The 'className' prop allows for additional CSS classes to be applied to the spinner, defaulting to an empty string if not provided. The spinner is created using SVG and has an animation applied to it to create the spinning effect.
-
-2. `index.ts`: This file serves as an entry point for the Spinner component in the project. It exports the default export from the 'Spinner.tsx' file, which is likely the main Spinner component. This structure allows for cleaner imports elsewhere in the codebase, as one can import the Spinner component directly from 'components/Spinner' instead of having to specify the 'Spinner.tsx' file.
+- `Spinner.tsx`: This file defines the Spinner component. It accepts two optional props: 'size' and 'className'. The 'size' prop controls the dimensions of the spinner, while the 'className' prop allows for additional CSS classes to be applied to the spinner. The spinner is created using SVG and includes an animation for the spinning effect.
+- `index.ts`: This file serves as an entry point for the Spinner component, exporting the default export from `Spinner.tsx`. This setup simplifies imports elsewhere in the project, as the Spinner component can be imported directly from `components/Spinner` without specifying the `Spinner.tsx` file.
 
 The directory does not contain any subdirectories.
 
 ### Key Components
 
-The key component in this directory is the `Spinner.tsx` file. This file defines the Spinner component, which is a critical visual element used across the codebase to indicate loading states. The Spinner component is designed to be flexible and customizable, accepting optional 'size' and 'className' props. This flexibility allows it to be used in various contexts and styles throughout the application.
+The key component in this directory is the Spinner component, defined in the `Spinner.tsx` file. This component is a critical part of the user interface, providing a visual indication of loading states within the application. The Spinner component is designed to be flexible and reusable, accepting optional props to control its size and additional CSS classes.
 
-The `index.ts` file, while not defining any functionality itself, plays a crucial role in simplifying the import process of the Spinner component. By exporting the Spinner component as its default export, it allows other parts of the codebase to import the Spinner component directly from 'components/Spinner', improving code readability and maintainability.
+The `index.ts` file is also a key part of this directory, serving as an entry point for the Spinner component. This setup simplifies the import process elsewhere in the project, allowing the Spinner component to be imported directly from `components/Spinner` without specifying the `Spinner.tsx` file.
 
 ### Usage & Examples
 
-The Spinner component is primarily used in scenarios where the application needs to indicate a loading state to the user. It can be customized via its 'size' and 'className' props, allowing it to fit seamlessly into various parts of the application.
+The Spinner component is used throughout the chatbot-ui project to indicate loading states. It can be used in any part of the application where a loading state needs to be indicated, such as during API requests or data processing.
 
-For instance, a typical usage of the Spinner component might look like this:
+For example, the Spinner component might be used in a component that fetches data from an API. While the data is being fetched, the Spinner component could be displayed to the user. Once the data has been fetched and is ready to be displayed, the Spinner component could be replaced with the data.
 
-```jsx
+Here is a simplified example of how the Spinner component might be used:
+
+```typescript
 import Spinner from 'components/Spinner';
 
-// ...
+function DataFetchingComponent() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState(null);
 
-return (
-  <div>
-    Loading data...
-    <Spinner size="2em" className="my-spinner" />
-  </div>
-);
+  useEffect(() => {
+    fetchData().then((fetchedData) => {
+      setData(fetchedData);
+      setIsLoading(false);
+    });
+  }, []);
+
+  return (
+    <div>
+      {isLoading ? <Spinner /> : <DataDisplay data={data} />}
+    </div>
+  );
+}
 ```
 
-In this example, the Spinner component is imported from 'components/Spinner' (made possible by the `index.ts` file), and then used within a render method. The 'size' prop is set to '2em', making the spinner larger than its default size, and the 'className' prop is set to 'my-spinner', allowing additional styles to be applied to the spinner.
+In this example, the Spinner component is displayed while the data is being fetched. Once the data has been fetched, the Spinner component is replaced with a DataDisplay component that displays the fetched data.
