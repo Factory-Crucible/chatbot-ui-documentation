@@ -1,47 +1,48 @@
 
-## The 'types' Directory
+## `types` Directory
 
-The 'types' directory is a fundamental part of the codebase, serving as the backbone for the project's TypeScript type definitions. It houses a collection of TypeScript files, each defining a unique set of interfaces, types, and constants that are utilized across the project. These definitions provide a consistent structure for data, ensuring that the codebase remains robust and maintainable. The 'types' directory is a testament to the project's commitment to strong typing and clean code, as it encapsulates the various data structures and constants that drive the application's functionality.
+The `types` directory is a crucial part of the codebase that houses TypeScript files defining various interfaces, types, and constants used throughout the project. These definitions provide a consistent structure for data across the application, ensuring type safety and enhancing code readability and maintainability. The directory contains files that define the structure of various parts of the project, including theme settings, key-value pair structures, prompt objects, Google's services, plugins, chat systems, environment variables for the OpenAI API, and the local storage schema for a chatbot UI.
 
 ### Contents
 
-The 'types' directory is composed solely of TypeScript (.ts) files, each serving a unique purpose in defining the structure of various aspects of the project. The directory does not contain any subdirectories. The files within the directory include:
+The `types` directory contains the following files:
 
-- `settings.ts`: Defines the 'Settings' interface for theme settings.
-- `data.ts`: Defines the 'KeyValuePair' interface for key-value pair structures.
-- `prompt.ts`: Defines the 'Prompt' interface for prompt objects.
-- `google.ts`: Defines interfaces related to Google's services.
-- `plugin.ts`: Defines structures for plugins.
-- `chat.ts`: Defines structures for chat systems.
-- `env.ts`: Defines the 'ProcessEnv' interface for environment variables.
+- `data.ts`: Defines a key-value pair structure.
+- `prompt.ts`: Outlines a prompt object.
+- `plugin.ts`: Defines structures for plugins and chat systems.
+- `settings.ts`: Defines theme settings.
 - `storage.ts`: Defines the local storage schema for a chatbot UI.
-- `index.ts`: An empty placeholder file.
-- `error.ts`: Defines the 'ErrorMessage' interface for error messages.
-- `folder.ts`: Defines the 'FolderInterface' and 'FolderType' for folder objects.
-- `export.ts`: Defines types and interfaces related to the application's export functionality.
 - `openai.ts`: Defines the structure of OpenAI models and their identifiers.
+- `chat.ts`: Defines various interfaces and types related to a chat system.
+- `export.ts`: Defines various types and interfaces related to the export functionality of the application.
+- `google.ts`: Structures data related to Google's services.
+- `folder.ts`: Defines a 'Folder' object.
+- `index.ts`: An empty placeholder file.
+- `env.ts`: Represents environment variables for the OpenAI API.
+- `error.ts`: Structures error messages.
 
 ### Key Components
 
-Several files within the 'types' directory play a crucial role in shaping the project's structure and functionality:
+The `types` directory contains several key components that are critical to the functioning of the application:
 
-- `settings.ts`: This file ensures consistent usage of theme settings across the application, promoting a uniform user interface.
-- `prompt.ts`: The 'Prompt' interface defined in this file provides a consistent structure for prompt objects, which are likely a fundamental part of the application's functionality.
-- `google.ts`: This file structures the data returned from Google's services, enabling the application to interact effectively with Google's APIs.
-- `plugin.ts`: The structures defined in this file allow the application to handle plugins in a consistent and standardized manner.
-- `chat.ts`: This file defines the structure of a chat system, likely a core part of the application's functionality.
-- `env.ts`: This file ensures that the correct types are used for environment variables related to the OpenAI API, promoting robust and error-free API interactions.
-- `storage.ts`: This file defines the local storage schema for a chatbot UI, ensuring consistent data storage and retrieval.
-- `export.ts`: This file defines the structure of the application's export functionality, allowing for consistent and reliable data export.
+- `data.ts`: This file defines the `KeyValuePair` interface, which is likely used throughout the project wherever a key-value pair structure is needed.
+- `prompt.ts`: This file defines the `Prompt` interface, which is likely used to provide a consistent structure for prompt objects throughout the codebase.
+- `plugin.ts`: This file defines the structure and data for plugins in the application, including interfaces for a plugin and its key, enums for plugin identification and naming, and a record of all plugins.
+- `storage.ts`: This file defines the `LocalStorage` interface, which structures the local storage schema for the chatbot UI.
+- `openai.ts`: This file defines the structure of OpenAI models and their identifiers, including an interface for an OpenAI model, an enum for model identifiers, a fallback model identifier, and a record mapping model identifiers to their respective model details.
+- `chat.ts`: This file defines various interfaces and types related to a chat system, including a message, a role, the body of a chat, and a conversation.
+- `export.ts`: This file defines various types and interfaces related to the export functionality of the application, including different versions of the export format.
 
 ### Usage & Examples
 
-The files within the 'types' directory are used throughout the codebase to provide structure and consistency to the data. For instance, the 'KeyValuePair' interface defined in `data.ts` is likely used wherever a key-value pair structure is needed. Similarly, the 'Settings' interface in `settings.ts` is used to ensure consistent usage of theme settings across the application.
+The files in the `types` directory are used throughout the codebase to provide consistent structure for data and enhance type safety. For example, the `KeyValuePair` interface defined in `data.ts` is likely used wherever a key-value pair structure is needed. Similarly, the `Prompt` interface defined in `prompt.ts` is likely used to structure prompt objects throughout the codebase.
 
-The 'Prompt' interface defined in `prompt.ts` is likely used to structure prompt objects, which are probably a fundamental part of the application's functionality. The interfaces defined in `google.ts` are used to structure the data returned from Google's services, enabling the application to interact effectively with Google's APIs.
+The `plugin.ts` file is used to structure and manage plugins in the application. It defines interfaces for a plugin and its key, enums for plugin identification and naming, and a record of all plugins. This structure is likely used wherever plugins are managed in the application.
 
-The 'Plugin' and 'PluginKey' interfaces in `plugin.ts` define the structure of a plugin and its key, respectively, and are likely used wherever plugins are handled in the application. The 'Message', 'Role', 'ChatBody', and 'Conversation' interfaces in `chat.ts` define the structure of a chat system, which is likely a core part of the application's functionality.
+The `LocalStorage` interface defined in `storage.ts` is used to structure the local storage schema for the chatbot UI. This structure is likely used wherever local storage is accessed or manipulated in the application.
 
-The 'ProcessEnv' interface in `env.ts` ensures that the correct types are used for environment variables related to the OpenAI API, promoting robust and error-free API interactions. The 'LocalStorage' interface in `storage.ts` defines the local storage schema for a chatbot UI, ensuring consistent data storage and retrieval.
+The `openai.ts` file is used to structure OpenAI models and their identifiers. It defines an interface for an OpenAI model, an enum for model identifiers, a fallback model identifier, and a record mapping model identifiers to their respective model details. This structure is likely used wherever OpenAI models are used in the application.
 
-The 'ErrorMessage' interface in `error.ts` structures error messages in the application, while the 'FolderInterface' and 'FolderType' in `folder.ts` define the structure of a 'Folder' object. The types and interfaces in `export.ts` define the structure of the application's export functionality, allowing for consistent and reliable data export. Finally, the 'OpenAIModel' interface and 'OpenAIModelID' enumeration in `openai.ts` define the structure of OpenAI models and their identifiers, enabling the application to interact effectively with OpenAI's services.
+The `chat.ts` file is used to structure various aspects of a chat system, including a message, a role, the body of a chat, and a conversation. These structures are likely used wherever chat systems are managed in the application.
+
+The `export.ts` file is used to structure the export functionality of the application. It defines different versions of the export format, which are likely used whenever data is exported from the application.
