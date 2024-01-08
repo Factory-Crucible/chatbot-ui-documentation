@@ -1,0 +1,1 @@
+generate_directory_documentation_markdown was called
