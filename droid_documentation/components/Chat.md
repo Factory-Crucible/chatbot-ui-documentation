@@ -1,7 +1,7 @@
 
 ## components/Chat Directory
 
-The `components/Chat` directory is a crucial part of the codebase, housing the React components that construct the chat interface of the application. This directory is responsible for the user interaction with the chat system, including message input and display, error handling, and various settings adjustments. The components within this directory work together to provide a seamless and interactive chat experience, with each component handling a specific aspect of the chat functionality.
+The `components/Chat` directory houses the React components that construct the chat interface of the application. This directory is responsible for the user interaction with the chat system, including message input and display, error handling, and various settings adjustments. The components within this directory work together to provide a seamless and interactive chat experience, with each component handling a specific aspect of the chat functionality.
 
 ### Contents
 
@@ -12,26 +12,24 @@ The `components/Chat` directory contains a collection of TypeScript files, each 
 - `Temperature.tsx`: Provides a slider for adjusting the 'temperature' parameter in a chatbot conversation.
 - `MemoizedChatMessage.tsx`: Exports a memoized version of the 'ChatMessage' component to optimize rendering.
 - `ErrorMessageDiv.tsx`: Displays an error message in a structured format.
-- `ModelSelect.tsx`: Provides a dropdown selection interface for different AI models.
+- `ModelSelect.tsx`: Provides a dropdown selection interface for different AI models. This component is crucial for the chat functionality.
 - `ChatLoader.tsx`: Displays a loading animation for the chat interface.
 - `SystemPrompt.tsx`: Handles the system prompts in a chat conversation.
 - `VariableModal.tsx`: Provides a modal for handling variables in a chat application.
 - `ChatMessage.tsx`: Represents a single chat message in a chat interface.
 - `ChatInput.tsx`: Provides the input functionality for a chat application.
 - `Chat.tsx`: Handles the chat functionality of the application.
-- `PromptList.tsx`: Renders a list of prompts.
+- `PromptList.tsx`: Renders a list of prompts. This component is responsible for displaying a list of prompts to the user, allowing them to select from predefined inputs.
 
 ### Key Components
 
 Several components play a critical role in the chat functionality:
 
 - `Chat.tsx` is the central component that manages the chat functionality. It handles sending messages, updating conversations, and managing responses. It also manages scrolling and message updates.
-
 - `ChatInput.tsx` is responsible for the input functionality. It handles changes, sends messages, stops the conversation, initializes the modal, handles key down events, parses variables, updates the prompt list visibility, selects prompts, and submits the form.
-
 - `ChatMessage.tsx` represents a single chat message. It provides functionalities to edit, delete, and copy a chat message. It also handles the display of the message based on the role of the sender (user or assistant).
-
 - `SystemPrompt.tsx` handles the system prompts in a chat conversation. It manages changes in the prompt, resizes the textarea, and handles clicks outside the prompt list.
+- `ModelSelect.tsx` provides a dropdown selection interface for different AI models. This component is crucial for the chat functionality.
 
 ### Usage & Examples
 
@@ -42,5 +40,7 @@ The components in this directory are used to build the chat interface of the app
 `ChatMessage.tsx` represents a single chat message. It provides functionalities to edit, delete, and copy a chat message. It also handles the display of the message based on the role of the sender (user or assistant).
 
 `SystemPrompt.tsx` handles the system prompts in a chat conversation. It takes in a conversation object, an array of prompts, and a function to change the prompt as props. It maintains several pieces of state, including the current value of the prompt, the active prompt index, whether the prompt list is visible, the prompt input value, an array of variables, and whether a modal is visible.
+
+Usage examples for `ModelSelect.tsx`, `ErrorMessageDiv.tsx`, `Temperature.tsx`, `Regenerate.tsx`, `PluginSelect.tsx`, `VariableModal.tsx`, `PromptList.tsx`, `ChatLoader.tsx`, and `MemoizedChatMessage.tsx` will be added in the next update of this document.
 
 Please note that the code snippets provided in the DIRECTORY_STRUCTURE are not representative of typical usage patterns. They are merely skeletons of the components.
